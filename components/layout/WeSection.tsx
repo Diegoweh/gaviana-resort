@@ -5,7 +5,7 @@ export default function WeSection() {
   return (
     <>
       {/* Sección principal */}
-      <section className="max-w-6xl mx-auto px-6 bg-white">
+      <section id="nosotros" className="max-w-6xl mx-auto px-6 bg-white">
         {/* Título */}
         <div className="text-center mb-10">
           <motion.h2
@@ -112,7 +112,7 @@ export default function WeSection() {
       </section>
 
       {/* Banner inferior */}
-      <section className="w-full relative overflow-hidden">
+      <section id="experiencias" className="w-full relative overflow-hidden">
         <motion.img
             src="/img/expBanner.webp"
             alt="Banner playa"

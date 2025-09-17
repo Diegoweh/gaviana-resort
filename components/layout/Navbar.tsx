@@ -13,10 +13,10 @@ import { motion } from "framer-motion";
  */
 
 const navItems = [
-  { href: "/#we", label: "Nosotros", title: "we" },
-  { href: "/#servicios", label: "Servicios", title: "service" },
-  { href: "#contacto", label: "Contacto", title: "contact" },
-  { href: "/projects", label: "Portafolio", title: "projects" },
+  { href: "#nosotros", label: "Nosotros", title: "nosotros" },
+  { href: "#experiencias", label: "Experiencias", title: "experiencias" },
+  { href: "#habitaciones", label: "Habitaciones", title: "habitaciones" },
+  { href: "#spa", label: "Spa", title: "spa" },
 ];
 
 export default function Navbar() {
@@ -46,8 +46,8 @@ export default function Navbar() {
         >
           {/* Izquierda (links) - desktop */}
           <div className="hidden md:flex items-center gap-6 pl-6 py-3">
-            <LinkItem href="/#we" title="we">Habitaciones</LinkItem>
-            <LinkItem href="/#servicios" title="service">Spa</LinkItem>
+            <LinkItem href="#nosotros" title="nosotros">Nosotros</LinkItem>
+            <LinkItem href="#experiencias" title="experiencias">Experiencias</LinkItem>
           </div>
 
           {/* Centro (logo) */}
@@ -83,8 +83,8 @@ export default function Navbar() {
 
           {/* Derecha (links) - desktop */}
           <div className="hidden md:flex items-center justify-end gap-6 pr-6 py-3">
-            <LinkItem href="#contacto" title="contact">Nosotros</LinkItem>
-            <LinkItem href="/projects" title="projects">Experiencias</LinkItem>
+            <LinkItem href="#habitaciones" title="habitaciones">Habitaciones</LinkItem>
+            <LinkItem href="#spa" title="spa">Spa</LinkItem>
           </div>
         </motion.div>
 

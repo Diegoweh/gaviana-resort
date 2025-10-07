@@ -13,10 +13,10 @@ import { motion } from "framer-motion";
  */
 
 const navItems = [
-  { href: "#nosotros", label: "Nosotros", title: "nosotros" },
-  { href: "#experiencias", label: "Experiencias", title: "experiencias" },
-  { href: "#habitaciones", label: "Habitaciones", title: "habitaciones" },
-  { href: "#spa", label: "Spa", title: "spa" },
+  { href: "/#nosotros", label: "Nosotros", title: "nosotros" },
+  { href: "/#experiencias", label: "Experiencias", title: "experiencias" },
+  { href: "/#habitaciones", label: "Habitaciones", title: "habitaciones" },
+  { href: "/#spa", label: "Spa", title: "spa" },
 ];
 
 export default function Navbar() {
@@ -33,9 +33,9 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="w-full sticky top-0 z-30">
+    <nav className="w-full sticky top-0 z-30 bg-gradient-to-b from-teal-50/80 to-transparent">
       {/* Barra contenedora */}
-      <div className="mx-auto mt-4 max-w-7xl px-4 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,8 +46,8 @@ export default function Navbar() {
         >
           {/* Izquierda (links) - desktop */}
           <div className="hidden md:flex items-center gap-6 pl-6 py-3">
-            <LinkItem href="#nosotros" title="nosotros">Nosotros</LinkItem>
-            <LinkItem href="#experiencias" title="experiencias">Experiencias</LinkItem>
+            <LinkItem href="/#nosotros" title="nosotros">Nosotros</LinkItem>
+            <LinkItem href="/#experiencias" title="experiencias">Experiencias</LinkItem>
           </div>
 
           {/* Centro (logo) */}
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <img
                   src="/img/gavLogo.svg"
                   alt="Logo"
-                  className="object-contain w-[84px] md:w-[110px] h-auto drop-shadow-sm"
+                  className="object-contain w-[84px] md:w-[90px] h-auto drop-shadow-sm"
                 />
               </Link>
             </motion.div>
@@ -83,8 +83,8 @@ export default function Navbar() {
 
           {/* Derecha (links) - desktop */}
           <div className="hidden md:flex items-center justify-end gap-6 pr-6 py-3">
-            <LinkItem href="#habitaciones" title="habitaciones">Habitaciones</LinkItem>
-            <LinkItem href="#spa" title="spa">Spa</LinkItem>
+            <LinkItem href="/#habitaciones" title="habitaciones">Habitaciones</LinkItem>
+            <LinkItem href="/#spa" title="spa">Spa</LinkItem>
           </div>
         </motion.div>
 

@@ -17,7 +17,7 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
   height = 'h-screen',
 }) => {
   return (
-    <section className={`fit w-full overflow-hidden ${height}`}>
+    <section className={`relaative w-full overflow-hidden ${height}`}>
       {/* Video Desktop */}
       <video
         className="hidden md:block absolute top-0 left-0 w-full h-full object-cover"

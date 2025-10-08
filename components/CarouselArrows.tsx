@@ -53,7 +53,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md hover:bg-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md hover:bg-[#f5bdb1] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
       type="button"
       {...restProps}
     >
@@ -68,7 +68,7 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md hover:bg-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+      className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md hover:bg-[#f5bdb1] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
       type="button"
       {...restProps}
     >

@@ -1,8 +1,13 @@
+// components/EmblaCarousel.tsx
 "use client"
 
 import type React from "react"
 import { useCallback, useEffect, useRef } from "react"
-import type { EmblaCarouselType, EmblaEventType, EmblaOptionsType } from "embla-carousel"
+import type {
+  EmblaCarouselType,
+  EmblaEventType,
+  EmblaOptionsType,
+} from "embla-carousel"
 import useEmblaCarousel from "embla-carousel-react"
 import { NextButton, PrevButton, usePrevNextButtons } from "@/components/CarouselArrows"
 import { DotButton, useDotButton } from "@/components/CarouselDoButtons"
@@ -18,7 +23,7 @@ type SlideData = {
   id: number
   title: string
   slug: string
-  image: string
+  images: string[]          // 👈 ahora es un arreglo
   description: string
   guests: number
   amenities: string[]
@@ -30,8 +35,7 @@ type PropType = {
   options?: EmblaOptionsType
 }
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const tweenFactor = useRef(0)
   const tweenNodes = useRef<HTMLElement[]>([])
@@ -101,52 +105,55 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <div id="habitaciones" className="max-w-6xl mx-auto px-4 py-12">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 touch-pan-y">
-          {slides.map((slide) => (
-            <div
-              className="flex-[0_0_80%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
-              key={slide.id}
-            >
-              <Link
-                href={`/habitaciones/${slide.slug}`}
-                className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+          {slides.map((slide) => {
+            const cover = slide.images?.[0] ?? "/placeholder.svg" // 👈 primera imagen
+            return (
+              <div
+                className="flex-[0_0_80%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
+                key={slide.id}
               >
-                <div className="embla-slide-content relative h-[35rem] rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src={slide.image || "/placeholder.svg"}
-                    alt={slide.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={slide.id === 1}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 space-y-3 text-white">
-                    <h3 className="text-2xl font-bold">{slide.title}</h3>
-                    <p className="text-sm/6 line-clamp-2 opacity-95">
-                      {slide.description}
-                    </p>
+                <Link
+                  href={`/habitaciones/${slide.slug}`}
+                  className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+                >
+                  <div className="embla-slide-content relative h-[35rem] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src={cover}
+                      alt={slide.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={slide.id === 1}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 space-y-3 text-white">
+                      <h3 className="text-2xl font-bold">{slide.title}</h3>
+                      <p className="text-sm/6 line-clamp-2 opacity-95">
+                        {slide.description}
+                      </p>
 
-                    <div className="flex flex-wrap items-center gap-2 pt-1">
-                      <span className="px-2 py-1 text-xs rounded-full bg-white/15 backdrop-blur">
-                        {slide.guests} huésped{slide.guests !== 1 ? "es" : ""}
-                      </span>
-                      <span className="px-2 py-1 text-xs rounded-full bg-white/15 backdrop-blur">
-                        {slide.size}
-                      </span>
-                      {slide.amenities?.map((amenity, idx) => (
-                        <span
-                          key={`${slide.id}-amenity-${idx}`}
-                          className="px-2 py-1 text-xs rounded-full bg-white/10 backdrop-blur"
-                        >
-                          {amenity}
+                      <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <span className="px-2 py-1 text-xs rounded-full bg-white/15 backdrop-blur">
+                          {slide.guests} huésped{slide.guests !== 1 ? "es" : ""}
                         </span>
-                      ))}
+                        <span className="px-2 py-1 text-xs rounded-full bg-white/15 backdrop-blur">
+                          {slide.size}
+                        </span>
+                        {slide.amenities?.map((amenity, idx) => (
+                          <span
+                            key={`${slide.id}-amenity-${idx}`}
+                            className="px-2 py-1 text-xs rounded-full bg-white/10 backdrop-blur"
+                          >
+                            {amenity}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))}
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
 

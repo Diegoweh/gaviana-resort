@@ -17,10 +17,10 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
   height = 'h-screen',
 }) => {
   return (
-    <section className={`relaative w-full overflow-hidden ${height}`}>
+    <section className={`relative w-full overflow-hidden ${height}`}>
       {/* Video Desktop */}
       <video
-        className="hidden md:block absolute top-0 left-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
@@ -32,7 +32,7 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
 
       {/* Video Mobile */}
       <video
-        className="block md:hidden absolute top-0 left-0 w-full h-full object-cover"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
@@ -42,7 +42,7 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
         Tu navegador no soporta el video.
       </video>
 
-      {/* Overlay */}
+      {/* Overlay opcional (actívalo si quieres oscurecer para legibilidad) */}
       {/* <div className={`absolute inset-0 ${overlayOpacity} z-10`} /> */}
 
       {/* Contenido sobre el video */}

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
+const BOOKING_URL = "https://tusreservas.ejemplo.com"; // <-- cámbialo
+
 const navItems = [
   { href: "/#nosotros", label: "Nosotros", title: "nosotros" },
   { href: "/#experiencias", label: "Experiencias", title: "experiencias" },
@@ -22,6 +24,32 @@ export default function Navbar() {
     </Link>
   );
 
+  const ReservaButton = ({ className = "" }: { className?: string }) => {
+    const isExternal = BOOKING_URL.startsWith("http");
+    const Btn = (
+      <span
+        className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#c68b7e] hover:bg-[#b47a6f] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
+      >
+        Reserva
+      </span>
+    );
+
+    return isExternal ? (
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Abrir módulo de reservas"
+      >
+        {Btn}
+      </a>
+    ) : (
+      <Link href={BOOKING_URL} aria-label="Abrir módulo de reservas" onClick={() => setMenuOpen(false)}>
+        {Btn}
+      </Link>
+    );
+  };
+
   return (
     <nav
       className="
@@ -37,7 +65,6 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          // Mobile: flex (logo izq, burger der) — Desktop: grid con centro real
           className="flex items-center justify-between h-16 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center"
         >
           {/* Izquierda (links desktop) */}
@@ -46,7 +73,7 @@ export default function Navbar() {
             <LinkItem href="/#experiencias" title="experiencias">Experiencias</LinkItem>
           </div>
 
-          {/* Centro (logo) — queda exactamente centrado */}
+          {/* Centro (logo) */}
           <div className="flex items-center justify-center justify-self-center">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -69,11 +96,13 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-6">
               <LinkItem href="/#habitaciones" title="habitaciones">Habitaciones</LinkItem>
               <LinkItem href="/#spa" title="spa">Spa</LinkItem>
+              {/* CTA Reserva (desktop) */}
+              <ReservaButton />
             </div>
 
             {/* Botón móvil (oculto en md+) */}
             <button
-              className="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-slate-700 hover:text-teal-700 hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300"
+              className="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-slate-700 hover:text-[#c68b7e] hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e]"
               onClick={() => setMenuOpen(v => !v)}
               aria-label="Abrir menú"
               aria-expanded={menuOpen}
@@ -96,9 +125,19 @@ export default function Navbar() {
           className="md:hidden border-t border-white/50 bg-white/75 backdrop-blur-xl"
         >
           <div className="flex flex-col items-stretch divide-y divide-white/50">
+            {/* CTA Reserva (mobile) */}
+            <div className="px-6 py-4">
+              <ReservaButton className="w-full" />
+            </div>
+
             {navItems.map(item => (
-              <Link key={item.href} href={item.href} title={item.title} onClick={() => setMenuOpen(false)}>
-                <div className="px-6 py-4 text-center text-slate-700 hover:text-teal-700 active:bg-white/70 transition-colors">
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.title}
+                onClick={() => setMenuOpen(false)}
+              >
+                <div className="px-6 py-4 text-center text-slate-700 hover:text-[#c68b7e] active:bg-white/70 transition-colors">
                   {item.label}
                 </div>
               </Link>

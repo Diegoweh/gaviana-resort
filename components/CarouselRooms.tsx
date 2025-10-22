@@ -120,6 +120,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
                     <Image
                       src={cover}
                       alt={slide.title}
+                      title={`Habitación ${slide.title} - Gaviana Resort`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"

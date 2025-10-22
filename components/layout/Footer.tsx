@@ -15,6 +15,7 @@ const Footer = () => {
                   <Image
                     src="/img/gavLogo.svg"
                     alt="Gaviana Resort Logo"
+                    title="Gaviana Resort Mazatlán"
                     width={96}
                     height={96}
                   />
@@ -41,6 +42,7 @@ const Footer = () => {
                   <span className="text-orange-400 font-medium">US</span> 1 800 528 8760
                 </p>
                 <a
+                title='Enviar mensaje por WhatsApp'
                 href="https://wa.me/52XXXXXXXXXX?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -58,13 +60,13 @@ const Footer = () => {
             <div className="space-y-6">
               <h4 className="text-lg font-semibold">Legales</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-gray-300 hover:text-white transition-colors">
+                <a href="#" title='aviso' className="block text-gray-300 hover:text-white transition-colors">
                   Aviso de privacidad
                 </a>
-                <a href="#" className="block text-gray-300 hover:text-white transition-colors">
+                <a href="#" title='terminos' className="block text-gray-300 hover:text-white transition-colors">
                   Términos y condiciones
                 </a>
-                <a href="#" className="block text-gray-300 hover:text-white transition-colors">
+                <a href="#" title='facturacion' className="block text-gray-300 hover:text-white transition-colors">
                   Facturación
                 </a>
               </div>

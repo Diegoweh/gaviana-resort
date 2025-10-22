@@ -32,6 +32,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
         <Image
           src={imageSrc}
           alt="Hero Banner"
+          title="Gaviana Resort - Tu casa de playa en Mazatlán"
           fill
           className="object-cover"
           priority={priority}
@@ -50,6 +51,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
         <Image
           src={mobileImageSrc || imageSrc}
           alt="Hero Banner Mobile"
+          title="Gaviana Resort - Tu casa de playa en Mazatlán"
           fill
           className="object-cover"
           priority={priority}

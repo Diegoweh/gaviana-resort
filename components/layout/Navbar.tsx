@@ -37,6 +37,7 @@ export default function Navbar() {
 
     return isExternal ? (
       <a
+        title="Abrir módulo de reservas"
         href={BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
@@ -86,6 +87,7 @@ export default function Navbar() {
                 <Image
                   src="/img/gavLogo.png"
                   alt="Logo"
+                  title="Gaviana Resort - Inicio"
                   width={44}
                   height={44}
                   fetchPriority="high"

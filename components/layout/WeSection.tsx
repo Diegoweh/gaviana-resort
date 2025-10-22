@@ -17,11 +17,12 @@ export default function WeSection() {
         <Image
           src="/img/fondoHero.webp"
           alt="Fondo hero"
+          title="Bienvenido a Gaviana Resort - Tu paraíso en la playa"
           fill
           className="object-cover -z-10"
           sizes="(max-width: 515px) 100vw, (max-width: 1200px) 80vw, 1200px"
           quality={75}
-          
+
         />
         <motion.h2
           className="text-4xl font-bold leading-tight text-center"
@@ -36,6 +37,7 @@ export default function WeSection() {
               <Image
                 src="/img/star.webp"
                 alt="Decorativo"
+                title="Estrella decorativa"
                 width={72}
                 height={72}
                 className="align-middle"
@@ -76,6 +78,7 @@ export default function WeSection() {
   
               <a
                 href="#"
+                title="habitaciones"
                 className="inline-block bg-[#34536c] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-700 transition-colors"
               >
                 Habitaciones
@@ -104,6 +107,7 @@ export default function WeSection() {
         <Image
           src="/img/expBanner.webp"
           alt="Banner playa"
+          title="Experiencias únicas en Gaviana Resort"
           fill
           className="object-cover"
           priority

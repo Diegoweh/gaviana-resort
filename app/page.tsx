@@ -49,6 +49,7 @@ export default function Home() {
             <Image
               src="/img/concha.jpg"
               alt="Decorativo"
+              title="Icono decorativo de concha"
               width={72}
               height={72}
               className="align-middle"
@@ -102,6 +103,7 @@ export default function Home() {
 
             <a
               href="#"
+              title="home"
               className="inline-block bg-[#dd8e80] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-600 transition-colors"
             >
               Ver más
@@ -156,6 +158,7 @@ export default function Home() {
           <Image
             src="/img/map.webp"
             alt="Mapa de ubicación"
+            title="Ubicación de Gaviana Resort en Mazatlán"
             fill
             className="object-cover object-[50%_60%]"
             sizes="100vw"

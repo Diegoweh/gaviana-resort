@@ -55,9 +55,10 @@ export default function ImageCarousel({ images, autoPlayInterval = 4000, classNa
             <Image
               src={image || "/placeholder.svg"}
               alt={`Experiencia ${index + 1}`}
+              title={`Galería Gaviana Resort - Imagen ${index + 1}`}
               fill
               className="object-cover"
-              
+
               sizes="(max-width: 449px) 100vw, (max-width: 1024px) 50vw, 600px"
               quality={75}
               loading="lazy"

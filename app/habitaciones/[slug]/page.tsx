@@ -125,6 +125,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
                   <Image
                     src={src}
                     alt={`${room!.title} ${idx + 1}`}
+                    title={`${room!.title} - Foto ${idx + 1}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 768px"

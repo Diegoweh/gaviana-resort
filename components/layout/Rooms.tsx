@@ -81,6 +81,7 @@ export default function Rooms() {
             <Image
               src={selectedLink.image || "/placeholder.svg"}
               alt={selectedLink.title}
+              title={`Habitación ${selectedLink.title} - Gaviana Resort Mazatlán`}
               fill
               className="object-cover transition-opacity duration-300"
               sizes="(min-width:1024px) 50vw, 100vw"
@@ -102,13 +103,14 @@ export default function Rooms() {
       <motion.img
         src="/img/banner2.webp"
         alt="Banner playa"
+        title="Donde el mar toca el cielo - Gaviana Resort"
         className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh] object-cover "
         initial={{ scale: 1.1, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ 
-          duration: 1.2, 
+        transition={{
+          duration: 1.2,
           ease: [0.25, 0.46, 0.45, 0.94],
-          delay: 0.2 
+          delay: 0.2
         }}
         viewport={{ once: true, margin: "-100px" }}
       />

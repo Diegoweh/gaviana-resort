@@ -3,7 +3,7 @@ import CarouselRooms from "@/components/CarouselRooms";
 import ImageCarousel from "@/components/layout/Carousel";
 
 import Rooms from "@/components/layout/Rooms";
-import VideoBanner from "@/components/layout/VideoBanner";
+import ImageBanner from "@/components/layout/ImageBanner";
 import WeSection from "@/components/layout/WeSection";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
@@ -27,9 +27,11 @@ export default function Home() {
   return (
     
     <>
-    <VideoBanner
-          desktopVideo="/media/gavianaHeader.mp4"
-          mobileVideo="/media/gavianaHeader.mp4"          
+    <ImageBanner
+      imageSrc="/img/hero.webp"
+      height="h-screen"
+      overlayOpacity="bg-black/20"
+      priority
     />
     <WeSection />
 
@@ -44,10 +46,13 @@ export default function Home() {
         <span className="block text-[#104b67]">
           <span className="inline-flex items-center gap-2 text-[#f5bdb1] font-mixta text-5xl">
             Habitaciones
-            <img
-              src="/img/concha.jpg"         // cambia por tu ruta
+            <Image
+              src="/img/concha.jpg"
               alt="Decorativo"
-              className="h-18 w-18 align-middle"  // ajusta tamaño
+              width={72}
+              height={72}
+              className="align-middle"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </span>
         </span>
@@ -147,21 +152,17 @@ export default function Home() {
     {/* Banner inferior */}
     <section className="w-full relative isolate overflow-hidden">
       <div className="relative w-full h-[48vh] sm:h-[42vh] md:h-[38vh] lg:h-[385px]">
-        <motion.img
-          src="/img/map.webp"
-          alt="Banner playa"
-          className="absolute inset-0 w-full h-full object-cover object-[50%_60%]" 
-          initial={{ scale: 1.08, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ 
-            duration: 1.0, 
-            ease: [0.25, 0.46, 0.45, 0.94],
-            delay: 0.1 
-          }}
-          viewport={{ once: true, margin: "-100px" }}
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="absolute inset-0 w-full h-full animate-heroFadeMap">
+          <Image
+            src="/img/map.webp"
+            alt="Mapa de ubicación"
+            fill
+            className="object-cover object-[50%_60%]"
+            sizes="100vw"
+            quality={70}
+            // priority  // actívalo solo si es LCP de la página
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent pointer-events-none" />
       </div>
     </section>   

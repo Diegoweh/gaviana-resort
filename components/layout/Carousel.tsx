@@ -57,7 +57,10 @@ export default function ImageCarousel({ images, autoPlayInterval = 4000, classNa
               alt={`Experiencia ${index + 1}`}
               fill
               className="object-cover"
-              priority={index === 0}
+              
+              sizes="(max-width: 449px) 100vw, (max-width: 1024px) 50vw, 600px"
+              quality={75}
+              loading="lazy"
             />
           </div>
         ))}

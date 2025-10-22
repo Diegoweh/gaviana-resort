@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -82,10 +83,15 @@ export default function Navbar() {
               className="shrink-0"
             >
               <Link href="/" title="Home" aria-label="Ir al inicio">
-                <img
+                <Image
                   src="/img/gavLogo.png"
                   alt="Logo"
-                  className="h-10 w-auto md:h-11 object-contain align-middle leading-none"
+                  width={44}
+                  height={44}
+                  fetchPriority="high"
+                  priority
+                  className="h-8 w-auto md:h-11 object-contain align-middle leading-none"
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </Link>
             </motion.div>

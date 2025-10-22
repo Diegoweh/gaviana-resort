@@ -24,9 +24,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: { params: Params }
+  { params }: { params: Promise<Params> }
 ): Promise<Metadata> {
-  const room = linkData.find((r) => r.slug === params.slug) as Room | undefined;
+  const { slug } = await params;
+  const room = linkData.find((r) => r.slug === slug) as Room | undefined;
   if (!room) {
     return {
       title: "Habitación no encontrada",
@@ -55,8 +56,9 @@ export async function generateMetadata(
   };
 }
 
-export default function RoomPage({ params }: { params: Params }) {
-  const room = linkData.find((r) => r.slug === params.slug) as Room | undefined;
+export default async function RoomPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const room = linkData.find((r) => r.slug === slug) as Room | undefined;
 
   if (!room) {
     notFound();

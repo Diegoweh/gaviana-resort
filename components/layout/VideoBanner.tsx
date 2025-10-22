@@ -25,6 +25,8 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
         muted
         loop
         playsInline
+        preload="none"
+        poster="/img/video-poster.webp"
       >
         <source src={desktopVideo} type="video/mp4" />
         Tu navegador no soporta el video.
@@ -37,6 +39,8 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
         muted
         loop
         playsInline
+        preload="none"
+        poster="/img/video-poster.webp"
       >
         <source src={mobileVideo} type="video/mp4" />
         Tu navegador no soporta el video.

@@ -1,4 +1,5 @@
 import { MessageCircle } from 'lucide-react'
+import Image from 'next/image'
 import React from 'react'
 
 const Footer = () => {
@@ -11,10 +12,12 @@ const Footer = () => {
               {/* Logo and Resort Name */}
               <div className="flex items-center gap-3">
                 <div className="w-24 h-24 rounded flex items-center justify-center">
-                  {/* Placeholder for logo - you can replace this with your actual logo */}
-                  
-                  <img src="/img/gavLogo.svg" alt="" />
-                  
+                  <Image
+                    src="/img/gavLogo.svg"
+                    alt="Gaviana Resort Logo"
+                    width={96}
+                    height={96}
+                  />
                 </div>
                 {/* <h3 className="text-xl font-semibold">Gaviana Resort Mazatlán</h3> */}
               </div>

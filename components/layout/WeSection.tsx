@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ImageCarousel from "./Carousel";
 
 const imagenesCarrusel = [
@@ -12,7 +13,16 @@ export default function WeSection() {
   return (
     <>
       {/* --- Banda full-bleed (ocupa todo el ancho) --- */}
-      <div id="nosotros" className="w-full bg-[url('/img/fondoHero.webp')] bg-cover bg-center bg-no-repeat min-h-[45vh] flex flex-col items-center justify-center px-6 py-40 mb-4">
+      <div id="nosotros" className="w-full relative min-h-[45vh] flex flex-col items-center justify-center px-6 py-40">
+        <Image
+          src="/img/fondoHero.webp"
+          alt="Fondo hero"
+          fill
+          className="object-cover -z-10"
+          sizes="(max-width: 515px) 100vw, (max-width: 1200px) 80vw, 1200px"
+          quality={75}
+          
+        />
         <motion.h2
           className="text-4xl font-bold leading-tight text-center"
           initial={{ x: -100, opacity: 0 }}
@@ -21,14 +31,17 @@ export default function WeSection() {
           viewport={{ once: true }}
         >
           <span className="block text-[#104b67]">
-            <span className="inline-flex items-center gap-2 text-[#f5bdb1] font-mixta text-5xl">
+            <h1 className="inline-flex items-center gap-2 text-[#f5bdb1] font-mixta text-5xl">
               Bienvenido
-              <img
-                src="/img/star.png"         // cambia por tu ruta
+              <Image
+                src="/img/star.webp"
                 alt="Decorativo"
-                className="h-18 w-18 align-middle"  // ajusta tamaño
+                width={72}
+                height={72}
+                className="align-middle"
+                style={{ width: 'auto', height: 'auto' }}
               />
-            </span>
+            </h1>
           </span>
           <span className="block text-[#104b67]">a tu casa de playa</span>
         </motion.h2>
@@ -82,22 +95,24 @@ export default function WeSection() {
       </section>
 
       {/* Banner + Título superior */}
-    <section
-      id="experiencias"
-      className="relative w-full overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]"
-    >
-      {/* Imagen de fondo */}
-      <motion.img
-        src="/img/expBanner.webp"
-        alt="Banner playa"
-        className="absolute inset-0 w-full h-full object-cover"
-        initial={{ scale: 1.1, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-        viewport={{ once: true, margin: "-100px" }}
-      />
+      <section
+        id="experiencias"
+        className="relative w-full overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]"
+      >
+      {/* Imagen de fondo optimizada con Next.js Image */}
+      <div className="absolute inset-0 w-full h-full animate-heroFade">
+        <Image
+          src="/img/expBanner.webp"
+          alt="Banner playa"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+          quality={70}
+        />
+      </div>
 
-      {/* Gradiente para legibilidad en la parte superior */}
+      {/* Gradiente para legibilidad */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/50 via-black/20 to-transparent" />
 
       {/* Contenido arriba del banner */}

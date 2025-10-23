@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ImageCarousel from "./Carousel";
+import DistintivosImageOnly from "./DistintivosStrip";
 
 const imagenesCarrusel = [
   '/img/backView.webp',
@@ -59,6 +60,7 @@ export default function WeSection() {
         </motion.p>
       </div>
 
+      
       <section className="relative bg-[#f4e7e4] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
             
         <div className="max-w-7xl mx-auto">
@@ -96,6 +98,14 @@ export default function WeSection() {
           </div>
         </div>
       </section>
+
+      <DistintivosImageOnly
+        imageSrc="/img/distintivos.png"
+        imageAlt="Certificaciones del Hotel Gaviana"
+        maxWidthDesktop="max-w-5xl"   // más grande en desktop
+        maxWidthMobile="max-w-sm"     // tamaño cómodo en mobile
+        imagePriority
+      />
 
       {/* Banner + Título superior */}
       <section

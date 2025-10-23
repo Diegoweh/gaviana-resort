@@ -2,14 +2,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import BookingBar from '../ui/BookingBar';
 
 interface ImageBannerProps {
   imageSrc: string;
-  mobileImageSrc?: string; // Optional separate mobile image
+  mobileImageSrc?: string;
   children?: React.ReactNode;
-  overlayOpacity?: string; // Ej: 'bg-black/30'
-  height?: string; // Ej: 'h-screen' o 'h-[80vh]'
+  overlayOpacity?: string;
+  height?: string;
   priority?: boolean;
+  titleImageSrc?: string; // 👈 en lugar de title, ahora se usa una imagen
 }
 
 const ImageBanner: React.FC<ImageBannerProps> = ({
@@ -19,6 +21,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
   overlayOpacity = 'bg-black/30',
   height = 'h-screen',
   priority = true,
+  titleImageSrc, // 👈 imagen del título
 }) => {
   return (
     <section className={`relative w-full overflow-hidden ${height}`}>
@@ -56,7 +59,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
           className="object-cover"
           priority={priority}
           sizes="100vw"
-          quality={85}
+          quality={65}
         />
       </motion.div>
 
@@ -65,12 +68,43 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
         <div className={`absolute inset-0 ${overlayOpacity} z-10`} />
       )}
 
+      {/* Imagen del título centrada arriba */}
+      {titleImageSrc && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+          className="absolute top-30 left-1/2 -translate-x-1/2 z-20 text-center px-4"
+        >
+          <Image
+            src={titleImageSrc}
+            alt="Título Gaviana Resort"
+            title="Gaviana Resort - Tu paraíso en Mazatlán"
+            width={240}
+            height={80}
+            className="mx-auto h-auto w-[60vw] md:w-[300px] object-contain drop-shadow-md"
+            sizes="(max-width: 768px) 60vw, 300px"
+            priority
+          />
+        </motion.div>
+      )}
+
       {/* Contenido sobre la imagen */}
       {children && (
         <div className="relative z-20 flex items-center justify-center h-full px-4 text-center">
           {children}
-        </div>
+        </div>        
       )}
+
+      {/* Formulario centrado abajo */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 w-[95%] md:w-[80%] max-w-5xl"
+      >
+        <BookingBar />
+      </motion.div>
     </section>
   );
 };

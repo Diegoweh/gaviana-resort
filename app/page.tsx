@@ -2,14 +2,16 @@
 import CarouselRooms from "@/components/CarouselRooms";
 import ImageCarousel from "@/components/layout/Carousel";
 
-import Rooms from "@/components/layout/Rooms";
 import ImageBanner from "@/components/layout/ImageBanner";
 import WeSection from "@/components/layout/WeSection";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 import { linkData } from "@/lib/link-data"
 
 import Image from "next/image";
+import PromoSplitBanner from "@/components/layout/PromoBanner";
+import DistintivosStrip from "@/components/layout/DistintivosStrip";
+import DistintivosImageStrip from "@/components/layout/DistintivosStrip";
+import DistintivosImageOnly from "@/components/layout/DistintivosStrip";
 
 const imagenesCarrusel = [
   '/img/spa1.webp',
@@ -28,12 +30,34 @@ export default function Home() {
     
     <>
     <ImageBanner
+      titleImageSrc="/img/titleLogo.png"      
       imageSrc="/img/hero.webp"
       height="h-screen"
       overlayOpacity="bg-black/20"
       priority
     />
+    <PromoSplitBanner
+      imageSrc="/img/ss2026.webp"
+      title="Semana Santa 2026"
+      kicker="Escápate al sol en Mazatlán"
+      lines={[
+        "Del 29 de marzo al 5 de abril, te espera Hotel Gaviana.",
+        "Reserva ya y vive la pasión del puerto con vista al mar.",
+        "¡Tu descanso perfecto está en Mazatlán!",
+      ]}
+      ctaLabel="Reservar"
+      ctaHref={`https://wa.me/5216691234567?text=${encodeURIComponent(
+        "Hola, quiero reservar para Semana Santa 2026 en Hotel Gaviana."
+      )}`}
+      bgColor="bg-[#0f2e3f]"
+      height="h-[420px]"
+      showTexture
+    />
+
+    
+
     <WeSection />
+    
 
     <div className="w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-6 py-18 mb-4">
       <motion.h2

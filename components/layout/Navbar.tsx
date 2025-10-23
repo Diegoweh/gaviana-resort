@@ -16,6 +16,9 @@ const navItems = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const MOBILE_RIGHT_IMG = "/img/titleLogo.png"; // <-- cámbialo a tu ruta
+
+
 
   const LinkItem = ({ href, title, children }: any) => (
     <Link href={href} title={title} scroll onClick={() => setMenuOpen(false)}>
@@ -83,7 +86,7 @@ export default function Navbar() {
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="shrink-0"
             >
-              <Link href="/" title="Home" aria-label="Ir al inicio">
+              <Link href="/" title="Home" aria-label="Ir al inicio" className="flex items-center">
                 <Image
                   src="/img/gavLogo.png"
                   alt="Logo"
@@ -95,9 +98,24 @@ export default function Navbar() {
                   className="h-8 w-auto md:h-11 object-contain align-middle leading-none"
                   style={{ width: 'auto', height: 'auto' }}
                 />
+
+                {/* Imagen a la derecha del logo (solo mobile) */}
+                <span className="md:hidden ml-3 inline-flex items-center">
+                  <Image
+                    src={MOBILE_RIGHT_IMG}
+                    alt="Gaviana wordmark"
+                    title="Gaviana"
+                    width={96}           // ancho de referencia; ajusta según tu asset
+                    height={20}          // alto de referencia; ajusta según tu asset
+                    sizes="(max-width: 768px) 40vw, 0px"
+                    className="h-7 w-auto object-contain"
+                    priority
+                  />
+                </span>
               </Link>
             </motion.div>
           </div>
+
 
           {/* Derecha (links desktop) + Hamburguesa mobile */}
           <div className="flex items-center justify-end gap-3 justify-self-end">

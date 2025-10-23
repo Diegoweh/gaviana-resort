@@ -75,7 +75,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="border-t border-slate-600 mt-12 pt-8 text-center text-gray-400">
-            <p>2021 Gaviana Resort. Todos los derechos reservados.</p>
+            <p>2025 Gaviana Resort. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>

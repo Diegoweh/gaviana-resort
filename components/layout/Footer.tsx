@@ -72,10 +72,10 @@ const Footer = () => {
                 <a href="/aviso-privacidad" title='aviso' className="block text-gray-300 hover:text-white transition-colors">
                   Aviso de privacidad
                 </a>
-                <a href="#" title='terminos' className="block text-gray-300 hover:text-white transition-colors">
+                <a href="/terminos-y-condiciones" title='terminos' className="block text-gray-300 hover:text-white transition-colors">
                   Términos y condiciones
                 </a>
-                <a href="/terminos-y-condiciones" title='facturacion' className="block text-gray-300 hover:text-white transition-colors">
+                <a href="https://gaviana.merkatek.com/" title='facturacion' className="block text-gray-300 hover:text-white transition-colors">
                   Facturación
                 </a>
               </div>

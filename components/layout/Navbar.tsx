@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* Izquierda (links desktop) */}
           <div className="hidden md:flex items-center gap-6 justify-self-start">
             <LinkItem href="/#nosotros" title="nosotros">Nosotros</LinkItem>
-            <LinkItem href="/#experiencias" title="experiencias">Experiencias</LinkItem>
+            <LinkItem href="/experiencias" title="experiencias">Experiencias</LinkItem>
           </div>
 
           {/* Centro (logo) */}

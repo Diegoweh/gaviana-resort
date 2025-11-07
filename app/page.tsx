@@ -32,9 +32,10 @@ export default function Home() {
     <>
     <ImageBanner
       titleImageSrc="/img/titleLogo.png"      
-      imageSrc="/img/hero.webp"
+      imageSrc="/img/hero2.webp"
+      mobileImageSrc="/img/heroMovil.webp"
       height="h-screen"
-      overlayOpacity="bg-black/20"
+      overlayOpacity="bg-black/40"
       priority
     />
     <PromoSplitBanner
@@ -86,7 +87,7 @@ export default function Home() {
       </motion.h2>
 
       <motion.p
-        className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-center"
+        className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-justify"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
@@ -122,7 +123,7 @@ export default function Home() {
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
               SPA Pyramides
             </p>
-            <p className="text-base sm:text-lg">
+            <p className="text-base sm:text-lg md:text-start text-justify">
               Date el gusto de salir del estrés que se vive en la ciudad. Visita el Spa Pyramides y deja tu descanso en manos de quienes saben. Ofrecemos para ti una gran variedad de opciones para tu relajación.
             </p>
 
@@ -152,7 +153,7 @@ export default function Home() {
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
               Gastronomía
             </p>
-            <p className="text-base sm:text-lg">
+            <p className="text-base sm:text-lg md:text-start text-justify">
               Haremos de tu estancia en Mazatlán una visita inolvidable y placentera. En Gaviana podrás disfrutar de bares exclusivos y restaurantes temáticos, cada uno listo para recibirte y maravillarte con su concepto.
             </p>
 

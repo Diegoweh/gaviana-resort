@@ -18,7 +18,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
   imageSrc,
   mobileImageSrc,
   children,
-  overlayOpacity = 'bg-black/30',
+  overlayOpacity = 'bg-black/50',
   height = 'h-screen',
   priority = true,
   titleImageSrc, // 👈 imagen del título

@@ -50,7 +50,7 @@ export default function WeSection() {
         </motion.h2>
 
         <motion.p
-          className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-center"
+          className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-justify md:text-center"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
@@ -68,13 +68,13 @@ export default function WeSection() {
   
             {/* Right column - Description */}
             <div className="space-y-6 leading-relaxed text-center lg:text-left">
-              <p className="text-[#104b67] lg:text-5xl text-3xl font-medium mb-6">
+              <p className="text-[#104b67] lg:text-5xl text-3xl font-medium mb-2">
                 Queremos superar
               </p>
               <p className="text-[#104b67] lg:text-5xl text-3xl font-medium  mb-6">
                 tus expectativas
               </p>
-              <p className="text-base sm:text-lg">
+              <p className="text-base sm:text-lg text-justify">
                 Estamos listos para atenderte como mereces. Sea cual sea el motivo de tu visita: por trabajo, vacaciones con amigos, en familia, escapada romántica o si sólo buscas un momento para desconectarte de la vida real, Gaviana Resort lo tiene todo.
               </p>
   
@@ -139,12 +139,12 @@ export default function WeSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="block text-[#f5bdb1]">Un mar de experiencias, una promesa</span>
-            <span className="block text-[#f5bdb1]">de bienestar, un homenaje a la calma</span>
+            <span className="block text-[#f5bdb1] text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
+            {/* <span className="block text-[#f5bdb1]">de bienestar, un homenaje a la calma</span> */}
           </motion.h2>
 
           <motion.p
-            className="mt-3 md:mt-4 text-base md:text-lg text-white/90 max-w-2xl text-center mx-auto drop-shadow"
+            className="mt-3 md:mt-4 text-base md:text-xl text-white/90 text-justify mx-auto drop-shadow"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.25 }}

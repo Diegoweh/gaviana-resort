@@ -9,7 +9,7 @@ const BOOKING_URL = "https://tusreservas.ejemplo.com"; // <-- cámbialo
 
 const navItems = [
   { href: "/#nosotros", label: "Nosotros", title: "nosotros" },
-  { href: "/#experiencias", label: "Experiencias", title: "experiencias" },
+  { href: "/experiencias", label: "Experiencias", title: "experiencias" },
   { href: "/#habitaciones", label: "Habitaciones", title: "habitaciones" },
   { href: "/#spa", label: "Spa", title: "spa" },
 ];

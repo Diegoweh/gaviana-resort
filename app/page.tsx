@@ -12,6 +12,7 @@ import PromoSplitBanner from "@/components/layout/PromoBanner";
 import DistintivosStrip from "@/components/layout/DistintivosStrip";
 import DistintivosImageStrip from "@/components/layout/DistintivosStrip";
 import DistintivosImageOnly from "@/components/layout/DistintivosStrip";
+import { MessageCircle } from "lucide-react";
 
 const imagenesCarrusel = [
   '/img/spa1.webp',
@@ -175,22 +176,92 @@ export default function Home() {
       </div>
     </section>
 
-    {/* Banner inferior */}
-    <section className="w-full relative isolate overflow-hidden">
-      <div className="relative w-full h-[48vh] sm:h-[42vh] md:h-[38vh] lg:h-[385px]">
-        <div className="absolute inset-0 w-full h-full animate-heroFadeMap">
-          <Image
-            src="/img/map.webp"
-            alt="Mapa de ubicación"
-            title="Ubicación de Gaviana Resort en Mazatlán"
-            fill
-            className="object-cover object-[50%_60%]"
-            sizes="100vw"
-            quality={70}
-            // priority  // actívalo solo si es LCP de la página
-          />
+    {/* Sección de Contacto y Ubicación */}
+    <section className="w-full bg-slate-50 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Información de Contacto - Izquierda */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#104b67] mb-2">
+                Contáctanos
+              </h2>
+              <p className="text-gray-600">
+                Estamos aquí para ayudarte con tu reservación
+              </p>
+            </div>
+
+            {/* Dirección */}
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-[#104b67]">Dirección</h3>
+              <div className="text-gray-700">
+                <p>Av. Playa Gaviotas 100, Zona Dorada, 82110</p>
+                <p>Mazatlán, Sinaloa, México</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-[#104b67]">Email</h3>
+              <a
+                href="mailto:reservaciones@gaviana.com"
+                className="text-orange-500 hover:text-orange-600 transition-colors"
+              >
+                reservaciones@gaviana.com
+              </a>
+            </div>
+
+            {/* Teléfonos */}
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-[#104b67]">Teléfonos</h3>
+              <div className="space-y-1 text-gray-700">
+                <p>
+                  <span className="text-orange-500 font-medium">MX</span>{' '}
+                  <a href="tel:+528007169700" className="hover:text-[#104b67] transition-colors">
+                    800 716 9700
+                  </a>
+                </p>
+                <p>
+                  <span className="text-orange-500 font-medium">CA</span>{' '}
+                  <a href="tel:+18777567532" className="hover:text-[#104b67] transition-colors">
+                    1877 756 7532
+                  </a>
+                </p>
+                <p>
+                  <span className="text-orange-500 font-medium">US</span>{' '}
+                  <a href="tel:+18005288760" className="hover:text-[#104b67] transition-colors">
+                    1 800 528 8760
+                  </a>
+                </p>
+                <a
+                  title='Enviar mensaje por WhatsApp'
+                  href="https://wa.me/52XXXXXXXXXX?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#104b67] hover:text-green-500"
+                  aria-label="Enviar mensaje por WhatsApp"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  <span>Mensaje de WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Maps - Derecha */}
+          <div className="h-[400px] lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.7841863448634!2d-106.43669892377894!3d23.253944107910668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869f53e7d84e7f27%3A0x1e8e8e8e8e8e8e8e!2sAv.%20Playa%20Gaviotas%20100%2C%20Zona%20Dorada%2C%2082110%20Mazatl%C3%A1n%2C%20Sin.!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación de Gaviana Resort en Mazatlán"
+            />
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent pointer-events-none" />
       </div>
     </section>   
    

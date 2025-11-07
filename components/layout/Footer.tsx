@@ -33,13 +33,22 @@ const Footer = () => {
               {/* Phone Numbers */}
               <div className="space-y-1 text-gray-300">
                 <p>
-                  <span className="text-orange-400 font-medium">MX</span> 800 716 9700
+                  <span className="text-orange-400 font-medium">MX</span>{' '}
+                  <a href="tel:+528007169700" className="hover:text-white transition-colors">
+                    800 716 9700
+                  </a>
                 </p>
                 <p>
-                  <span className="text-orange-400 font-medium">CA</span> 1877 756 7532
+                  <span className="text-orange-400 font-medium">CA</span>{' '}
+                  <a href="tel:+18777567532" className="hover:text-white transition-colors">
+                    1877 756 7532
+                  </a>
                 </p>
                 <p>
-                  <span className="text-orange-400 font-medium">US</span> 1 800 528 8760
+                  <span className="text-orange-400 font-medium">US</span>{' '}
+                  <a href="tel:+18005288760" className="hover:text-white transition-colors">
+                    1 800 528 8760
+                  </a>
                 </p>
                 <a
                 title='Enviar mensaje por WhatsApp'

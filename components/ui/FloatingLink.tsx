@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 
-const BOOKING_URL = "https://tusreservas.ejemplo.com"; // <-- cámbialo
+const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
 
 export default function FloatingReserva() {
   return (

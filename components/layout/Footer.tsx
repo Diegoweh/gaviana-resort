@@ -52,7 +52,7 @@ const Footer = () => {
                 </p>
                 <a
                 title='Enviar mensaje por WhatsApp'
-                href="https://wa.me/52XXXXXXXXXX?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
+                href="https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white hover:text-green-500"

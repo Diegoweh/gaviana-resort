@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
-const BOOKING_URL = "https://tusreservas.ejemplo.com"; // <-- cámbialo
+const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
 
 const navItems = [
   { href: "/#nosotros", label: "Nosotros", title: "nosotros" },
-  { href: "/experiencias", label: "Experiencias", title: "experiencias" },
+  { href: "/experiencias", label: "Mazatlán", title: "experiencias" },
   { href: "/#habitaciones", label: "Habitaciones", title: "habitaciones" },
   { href: "/#spa", label: "Spa", title: "spa" },
 ];
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* Izquierda (links desktop) */}
           <div className="hidden md:flex items-center gap-6 justify-self-start">
             <LinkItem href="/#nosotros" title="nosotros">Nosotros</LinkItem>
-            <LinkItem href="/experiencias" title="experiencias">Experiencias</LinkItem>
+            <LinkItem href="/experiencias" title="experiencias">Mazatlán</LinkItem>
           </div>
 
           {/* Centro (logo) */}

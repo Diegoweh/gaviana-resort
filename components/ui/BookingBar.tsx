@@ -2,7 +2,8 @@
 import { useState, useMemo } from "react";
 import { X } from "lucide-react";
 
-const WHATSAPP_PHONE = "5216691234567"; // 👈 cámbialo
+const WHATSAPP_PHONE = "5216691527305"; // 👈 cámbialo
+
 
 type Props = {
   className?: string;

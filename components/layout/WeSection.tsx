@@ -139,12 +139,12 @@ export default function WeSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="block text-[#f5bdb1] text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
+            <span className="block text-[#f5bdb1] md:text-center text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
             {/* <span className="block text-[#f5bdb1]">de bienestar, un homenaje a la calma</span> */}
           </motion.h2>
 
           <motion.p
-            className="mt-3 md:mt-4 text-base md:text-xl text-white/90 text-justify mx-auto drop-shadow"
+            className="mt-3 md:mt-4 text-base md:text-xl text-white/90 md:text-center text-justify mx-auto drop-shadow"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.25 }}

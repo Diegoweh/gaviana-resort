@@ -61,7 +61,7 @@ export default function Home() {
     <WeSection />
     
 
-    <div className="w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-6 py-18 mb-4">
+    <div className="w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-6 py-18 mb-4 ">
       <motion.h2
         className="text-4xl font-bold leading-tight text-center"
         initial={{ x: -100, opacity: 0 }}
@@ -140,19 +140,19 @@ export default function Home() {
     </section>
 
     {/* Carousel section 2 */}
-    <section className="relative bg-stone-50 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-stone-50 py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
-          {/* Right column - Description */}
+          {/* Right column - Description */}          
           <div className="space-y-6 leading-relaxed">
+            <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
+              El sabro de Mazatlán
+            </p>
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium mb-6">
-              Experiencias y
-            </p>
-            <p className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
-              Gastronomía
-            </p>
+              Experiencias y Gastronomía
+            </p>           
             <p className="text-base sm:text-lg md:text-start text-justify">
               Haremos de tu estancia en Mazatlán una visita inolvidable y placentera. En Gaviana podrás disfrutar de bares exclusivos y restaurantes temáticos, cada uno listo para recibirte y maravillarte con su concepto.
             </p>
@@ -178,7 +178,7 @@ export default function Home() {
     </section>
 
     {/* Sección de Contacto y Ubicación */}
-    <section className="w-full bg-slate-50 py-12 sm:py-16">
+    <section className="w-full bg-slate-50 py-12 sm:py-16 bg-[url('/img/bg2.webp')]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Información de Contacto - Izquierda */}

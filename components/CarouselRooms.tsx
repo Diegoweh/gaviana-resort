@@ -102,7 +102,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor])
 
   return (
-    <div id="habitaciones" className="max-w-6xl mx-auto px-4 py-12">
+    <div id="habitaciones" className=" bg-[url('/img/bg2.webp')] mx-auto px-4 py-12">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 touch-pan-y">
           {slides.map((slide) => {

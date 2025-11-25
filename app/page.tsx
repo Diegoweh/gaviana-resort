@@ -8,10 +8,8 @@ import { motion } from "framer-motion";
 import { linkData } from "@/lib/link-data"
 
 import Image from "next/image";
-import PromoSplitBanner from "@/components/layout/PromoBanner";
-import DistintivosStrip from "@/components/layout/DistintivosStrip";
-import DistintivosImageStrip from "@/components/layout/DistintivosStrip";
-import DistintivosImageOnly from "@/components/layout/DistintivosStrip";
+import PromoSplitBanner from "@/components/layout/PromoSplitBanner";
+
 import { MessageCircle } from "lucide-react";
 
 const imagenesCarrusel = [
@@ -39,7 +37,8 @@ export default function Home() {
       priority
     />
     <PromoSplitBanner
-      imageSrc="/img/ss2026.webp"
+      imageSrc="/img/sessonBanner.webp"
+      mobileImageSrc="/img/sessonBannerMobile.webp"
       title="Semana Santa 2026"
       kicker="Escápate al sol en Mazatlán"
       lines={[

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { linkData } from "@/lib/link-data";
+import RecentBookingNotification from "@/components/RecentBookingNotification";
 
 type Params = { slug: string };
 
@@ -161,7 +162,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
       {/* Detalles debajo del carrusel (vistoso) */}
       <section className="mb-12">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-6">
           <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
             {/* Franja decorativa con gradiente */}
             <div className="h-2 w-full bg-gradient-to-r from-[#f7a391] via-[#f5bdb1] to-[#ffd9cf]" />
@@ -265,6 +266,10 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
         </div>
       </section>
 
+      {/* Notificación de reserva reciente */}
+      <div className="max-w-3xl mx-auto space-y-6">
+        <RecentBookingNotification roomTitle={room!.title} />
+      </div>
 
       {/* Otras habitaciones */}
       <section className="mt-12">

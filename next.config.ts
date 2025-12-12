@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  eslint: { ignoreDuringBuilds: true },
+  
   images: {
     formats: ['image/webp', 'image/avif'],
     qualities: [65, 70, 75, 85, 90],

@@ -41,8 +41,8 @@ export default function Home() {
         {
           imageSrc: "/img/sessonBanner.webp",
           mobileImageSrc: "/img/sessonBannerMobile.webp",
-          title: "Semana Santa 2026",
-          kicker: "Escápate al sol en Mazatlán",
+          title: "Preventa Semana Santa 2026",
+          kicker: "Hasta un 45% de descuento",
           lines: [
             "Del 29 de marzo al 5 de abril, te espera Hotel Gaviana.",
             "Reserva ya y vive la pasión del puerto con vista al mar.",
@@ -55,35 +55,21 @@ export default function Home() {
         },
         // Puedes agregar más slides aquí
        {
-          imageSrc: "/img/sessonBanner.webp",
-          mobileImageSrc: "/img/sessonBannerMobile.webp",
-          title: "Semana Santa 2026",
-          kicker: "Escápate al sol en Mazatlán",
+          imageSrc: "/img/sessonBanner-2.webp",
+          mobileImageSrc: "/img/sessonBannerMobile-2.webp",
+          title: "Promoción Enero 2026",
+          kicker: "Hasta un 45% de descuento",
           lines: [
-            "Del 29 de marzo al 5 de abril, te espera Hotel Gaviana.",
-            "Reserva ya y vive la pasión del puerto con vista al mar.",
-            "¡Tu descanso perfecto está en Mazatlán!",
+            "Este enero 2026, disfruta Mazatlán desde Hotel Gaviana.",
+            "Aprovecha hasta 45% de descuento reservando con anticipación.",
+            "¡Escápate al mar y empieza el año como se debe!",
           ],
           ctaLabel: "Reservar",
           ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
-            "Hola, quiero reservar para Semana Santa 2026 en Hotel Gaviana."
+            "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
           )}`,
         },
-        {
-          imageSrc: "/img/sessonBanner.webp",
-          mobileImageSrc: "/img/sessonBannerMobile.webp",
-          title: "Semana Santa 2026",
-          kicker: "Escápate al sol en Mazatlán",
-          lines: [
-            "Del 29 de marzo al 5 de abril, te espera Hotel Gaviana.",
-            "Reserva ya y vive la pasión del puerto con vista al mar.",
-            "¡Tu descanso perfecto está en Mazatlán!",
-          ],
-          ctaLabel: "Reservar",
-          ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
-            "Hola, quiero reservar para Semana Santa 2026 en Hotel Gaviana."
-          )}`,
-        },
+        
       ]}
       height="h-[420px]"
       showTexture

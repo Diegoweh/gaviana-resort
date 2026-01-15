@@ -1,10 +1,12 @@
 // app/habitaciones/[slug]/page.tsx
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { linkData } from "@/lib/link-data";
 import RecentBookingNotification from "@/components/RecentBookingNotification";
+import RoomCarousel from "@/components/RoomCarousel";
 
 type Params = { slug: string };
 
@@ -94,70 +96,11 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
       {/* Carousel centrado */}
       <section className="mb-8">
-        <div className="max-w-3xl mx-auto">
-          {/* Pista del carrusel */}
-          <div
-            className="
-              relative
-              overflow-x-auto
-              flex
-              snap-x snap-mandatory
-              scroll-smooth
-              rounded-2xl
-              border
-              bg-white
-              shadow-sm
-            "
-            aria-label="Galería de imágenes de la habitación"
-          >
-            {images.map((src, idx) => {
-              const slideId = `slide-${idx + 1}`;
-              return (
-                <div
-                  id={slideId}
-                  key={`${room!.slug}-img-${idx}`}
-                  className="
-                    relative
-                    min-w-full
-                    snap-center
-                    aspect-[16/10]
-                  "
-                >
-                  <Image
-                    src={src}
-                    alt={`${room!.title} ${idx + 1}`}
-                    title={`${room!.title} - Foto ${idx + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 768px"
-                    priority={idx === 0}
-                  />
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Controles: Dots + Anclas */}
-          {images.length > 1 && (
-            <div className="mt-4 flex items-center justify-center gap-2">
-              {images.map((_, idx) => {
-                const href = `#slide-${idx + 1}`;
-                return (
-                  <a
-                    key={`dot-${idx}`}
-                    href={href}
-                    className="
-                      h-2.5 w-2.5 rounded-full border
-                      hover:opacity-80 focus:outline-none focus:ring
-                    "
-                    aria-label={`Ir a la imagen ${idx + 1}`}
-                    title={`Imagen ${idx + 1}`}
-                  />
-                );
-              })}
-            </div>
-          )}
-        </div>
+        <RoomCarousel
+          images={images}
+          roomTitle={room!.title}
+          roomSlug={room!.slug}
+        />
       </section>
 
       {/* Detalles debajo del carrusel (vistoso) */}

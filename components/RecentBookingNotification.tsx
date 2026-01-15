@@ -8,13 +8,23 @@ const names = [
   "José", "María", "Carlos", "Ana", "Luis", "Laura", "Miguel", "Sofia",
   "Fernando", "Carmen", "Roberto", "Isabel", "Diego", "Patricia", "Jorge",
   "Gabriela", "Ricardo", "Valentina", "Alejandro", "Daniela", "Antonio",
-  "Camila", "Francisco", "Elena", "Manuel", "Andrea"
+  "Camila", "Francisco", "Elena", "Manuel", "Andrea", "Raúl", "Mónica",
+  "Pedro", "Lucía", "Javier", "Natalia", "Sebastián", "Mariana", "Pablo",
+  "Victoria", "Enrique", "Fernanda", "César", "Paola", "Óscar", "Renata",
+  "Guillermo", "Claudia", "Arturo", "Beatriz", "Héctor", "Adriana", "Rodrigo",
+  "Jimena", "Emilio", "Valeria", "Ramón", "Carolina", "Alberto", "Cristina",
+  "Eduardo", "Silvia", "Martín", "Rosa", "Rafael", "Verónica", "Andrés",
+  "Diana", "Sergio", "Martha", "Leonardo", "Teresa", "Gustavo", "Lorena"
 ];
 
 const cities = [
   "Ciudad de México", "Guadalajara", "Monterrey", "Puebla", "Tijuana",
   "León", "Querétaro", "Mérida", "San Luis Potosí", "Hermosillo",
-  "Cancún", "Los Cabos", "Puerto Vallarta", "Playa del Carmen"
+  "Cancún", "Los Cabos", "Puerto Vallarta", "Playa del Carmen", "Oaxaca",
+  "Guanajuato", "Morelia", "Aguascalientes", "Toluca", "Veracruz",
+  "Chihuahua", "Manzanillo", "Tulum", "Cuernavaca", "Durango", "Saltillo",
+  "Culiacán", "Acapulco", "Pachuca", "Zacatecas", "Colima", "Tuxtla Gutiérrez",
+  "Villahermosa", "Campeche", "Xalapa", "Irapuato", "Celaya", "Tepic"
 ];
 
 interface RecentBookingNotificationProps {

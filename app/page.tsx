@@ -168,7 +168,7 @@ export default function Home() {
           {/* Right column - Description */}          
           <div className="space-y-6 leading-relaxed">
             <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
-              El sabro de Mazatlán
+              El sabor de Mazatlán
             </p>
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium mb-6">
               Experiencias y Gastronomía

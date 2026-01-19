@@ -90,7 +90,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <span className="block text-[#104b67]">
-          <span className="inline-flex items-center gap-2 text-[#f5bdb1] font-mixta text-5xl">
+          <span className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
             Habitaciones
             <Image
               src="/img/concha.jpg"
@@ -150,7 +150,7 @@ export default function Home() {
             <a
               href="#"
               title="home"
-              className="inline-block bg-[#dd8e80] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-600 transition-colors"
+              className="inline-block bg-[#104b67] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-600 transition-colors"
             >
               Ver más
             </a>

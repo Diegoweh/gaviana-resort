@@ -33,7 +33,7 @@ export default function WeSection() {
           viewport={{ once: true }}
         >
           <span className="block text-[#104b67]">
-            <h1 className="inline-flex items-center gap-2 text-[#f5bdb1] font-mixta text-5xl">
+            <h1 className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
               Bienvenido
               <Image
                 src="/img/star.webp"
@@ -115,7 +115,7 @@ export default function WeSection() {
       {/* Imagen de fondo optimizada con Next.js Image */}
       <div className="absolute inset-0 w-full h-full animate-heroFade">
         <Image
-          src="/img/expBanner.webp"
+          src="/img/expBanner-2.webp"
           alt="Banner playa"
           title="Experiencias únicas en Gaviana Resort"
           fill
@@ -139,12 +139,12 @@ export default function WeSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="block text-[#f5bdb1] md:text-center text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
+            <span className="block text-white text-shadow-lg md:text-center text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
             {/* <span className="block text-[#f5bdb1]">de bienestar, un homenaje a la calma</span> */}
           </motion.h2>
 
           <motion.p
-            className="mt-3 md:mt-4 text-base md:text-xl text-white/90 md:text-center text-justify mx-auto drop-shadow"
+            className="mt-3 md:mt-4 text-base md:text-xl text-white text-shadow-lg md:text-center text-justify mx-auto drop-shadow"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.25 }}

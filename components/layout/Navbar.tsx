@@ -26,13 +26,13 @@ export default function Navbar() {
         {children}
       </span>
     </Link>
-  );
+  ); 
 
   const ReservaButton = ({ className = "" }: { className?: string }) => {
     const isExternal = BOOKING_URL.startsWith("http");
     const Btn = (
       <span
-        className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#c68b7e] hover:bg-[#b47a6f] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
+        className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#104b67] hover:bg-[#1e333c] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
       >
         Reserva
       </span>

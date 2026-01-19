@@ -120,7 +120,7 @@ export default function RoomCarousel({
                 shadow-lg
                 transition-all duration-200
                 opacity-100
-                focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#f7a391]
+                focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#104b67]
                 z-10
               "
               aria-label="Imagen anterior"
@@ -128,7 +128,7 @@ export default function RoomCarousel({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 md:h-6 md:w-6 text-[#f7a391]"
+                className="h-5 w-5 md:h-6 md:w-6 text-[#104b67]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -148,7 +148,7 @@ export default function RoomCarousel({
                 shadow-lg
                 transition-all duration-200
                 opacity-100
-                focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#f7a391]
+                focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#104b67]
                 z-10
               "
               aria-label="Imagen siguiente"
@@ -156,7 +156,7 @@ export default function RoomCarousel({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 md:h-6 md:w-6 text-[#f7a391]"
+                className="h-5 w-5 md:h-6 md:w-6 text-[#104b67]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -182,11 +182,11 @@ export default function RoomCarousel({
                 className={`
                   rounded-full
                   transition-all duration-300
-                  focus:outline-none focus:ring-2 focus:ring-[#f7a391] focus:ring-offset-2
+                  focus:outline-none focus:ring-2 focus:ring-[#104b67] focus:ring-offset-2
                   ${
                     isActive
-                      ? "h-2.5 w-8 bg-[#f7a391]"
-                      : "h-2.5 w-2.5 bg-gray-300 hover:bg-[#f7a391]/60"
+                      ? "h-2.5 w-8 bg-[#104b67]"
+                      : "h-2.5 w-2.5 bg-gray-300 hover:bg-[#104b67]/60"
                   }
                 `}
                 aria-label={`Ir a la imagen ${idx + 1}`}

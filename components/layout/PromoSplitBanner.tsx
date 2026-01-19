@@ -116,7 +116,7 @@ export default function PromoSplitBanner({
                   )}
 
                   <div className="relative z-10">
-                    <h2 className="font-semibold italic text-[28px] md:text-[42px] leading-tight text-[#e9a79a] mb-3 md:mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                    <h2 className="font-semibold italic text-[28px] md:text-[42px] leading-tight text-white mb-3 md:mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                       {slide.title}
                     </h2>
 

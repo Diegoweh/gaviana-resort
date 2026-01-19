@@ -86,7 +86,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
       {/* Header */}
       <header className="mb-6 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#f7a391]">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#104b67]">
           {room!.title}
         </h1>
         <p className="mt-2 text-stone-600 md:text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
             {/* Franja decorativa con gradiente */}
-            <div className="h-2 w-full bg-gradient-to-r from-[#f7a391] via-[#f5bdb1] to-[#ffd9cf]" />
+            <div className="h-2 w-full bg-gradient-to-r from-[#104b67] via-[#1e333c] to-[#104b67]" />
 
             <div className="p-6 md:p-8 space-y-6">
               <header className="space-y-2 text-center">
@@ -191,7 +191,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
               <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="https://wa.me/521234567890?text=Hola%2C%20quiero%20informes%20de%20la%20habitación"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#f7a391] px-5 py-2.5 text-white font-medium hover:opacity-90 transition shadow-sm"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#104b67] px-5 py-2.5 text-white font-medium hover:opacity-90 transition shadow-sm"
                 >
                   Reservar ahora
                 </Link>
@@ -239,7 +239,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-[#f7a391]">{r.title}</h3>
+                    <h3 className="font-semibold text-[#104b67]">{r.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-2">
                       {r.description}
                     </p>

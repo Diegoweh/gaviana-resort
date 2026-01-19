@@ -22,8 +22,8 @@ export default function FloatingReserva() {
           flex items-center justify-center
           w-14 h-14 md:w-16 md:h-16
           rounded-full
-          bg-[#c68b7e] text-white
-          hover:bg-[#b47a6f] active:bg-[#a26c62]
+          bg-[#104b67] text-white
+          hover:bg-[#1e333c] active:bg-[#a26c62]
           shadow-lg shadow-[#c68b7e]/30
           transition-colors
           focus-visible:outline-none
@@ -32,6 +32,6 @@ export default function FloatingReserva() {
       >
         <Calendar size={26} strokeWidth={2.2} />
       </Link>
-    </motion.div>
+    </motion.div> 
   );
 }

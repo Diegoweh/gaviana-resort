@@ -29,7 +29,7 @@ export default function Home() {
     
     <>
     <ImageBanner
-      titleImageSrc="/img/titleLogo.png"      
+      titleImageSrc="/img/titleLogoWhite.png"      
       imageSrc="/img/hero2.webp"
       mobileImageSrc="/img/heroMovil.webp"
       height="h-screen"
@@ -107,7 +107,7 @@ export default function Home() {
       </motion.h2>
 
       <motion.p
-        className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-justify"
+        className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-center"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}

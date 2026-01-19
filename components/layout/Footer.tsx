@@ -13,7 +13,7 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <div className="w-24 h-24 rounded flex items-center justify-center">
                   <Image
-                    src="/img/gavLogo.svg"
+                    src="/img/logoFooter.png"
                     alt="Gaviana Resort Logo"
                     title="Gaviana Resort Mazatlán"
                     width={96}

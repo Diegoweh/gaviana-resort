@@ -174,9 +174,9 @@ export default function BookingBar({
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center whitespace-nowrap
-            rounded-md px-5 py-2.5 text-[15px] font-medium bg-[#c68b7e] 
-            hover:bg-[#b47a6f] active:bg-[#a26c62] text-white shadow-sm
-            focus:outline-none focus:ring-2 focus:ring-[#c68b7e]"
+            rounded-md px-5 py-2.5 text-[15px] font-medium bg-[#104b67]  
+            hover:bg-[#1e353f] active:bg-[#104b67] text-white shadow-sm
+            focus:outline-none focus:ring-2 focus:ring-[#104b67]"
           >
             Reservar
           </a>

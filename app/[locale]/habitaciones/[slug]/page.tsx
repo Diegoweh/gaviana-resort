@@ -1,12 +1,14 @@
 // app/habitaciones/[slug]/page.tsx
+"use server";
 
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { linkData } from "@/lib/link-data";
+import { getLinkData } from "@/lib/link-data";
 import RecentBookingNotification from "@/components/RecentBookingNotification";
 import RoomCarousel from "@/components/RoomCarousel";
+import { getTranslations } from "next-intl/server";
 
 type Params = { slug: string };
 
@@ -23,18 +25,31 @@ type Room = {
 };
 
 export async function generateStaticParams() {
-  return linkData.map((room) => ({ slug: room.slug }));
+  // Generate params for all rooms in all locales
+  const locales = ['es', 'en'] as const;
+  const params = [];
+
+  for (const locale of locales) {
+    const rooms = getLinkData(locale);
+    for (const room of rooms) {
+      params.push({ locale, slug: room.slug });
+    }
+  }
+
+  return params;
 }
 
 export async function generateMetadata(
-  { params }: { params: Promise<Params> }
+  { params }: { params: Promise<Params & { locale: string }> }
 ): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'rooms' });
+  const linkData = getLinkData(locale as 'es' | 'en');
   const room = linkData.find((r) => r.slug === slug) as Room | undefined;
   if (!room) {
     return {
-      title: "Habitación no encontrada",
-      description: "La habitación que buscas no existe.",
+      title: t('notFoundTitle'),
+      description: t('notFoundDescription'),
       robots: { index: false },
     };
   }
@@ -45,7 +60,7 @@ export async function generateMetadata(
     }));
 
   return {
-    title: `${room.title} · Habitaciones`,
+    title: `${room.title} · ${t('roomsSection')}`,
     description: room.description,
     openGraph: {
       title: room.title,
@@ -54,13 +69,15 @@ export async function generateMetadata(
       type: "article",
     },
     alternates: {
-      canonical: `/habitaciones/${room.slug}`,
+      canonical: `/${locale}/habitaciones/${room.slug}`,
     },
   };
 }
 
-export default async function RoomPage({ params }: { params: Promise<Params> }) {
-  const { slug } = await params;
+export default async function RoomPage({ params }: { params: Promise<Params & { locale: string }> }) {
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'rooms' });
+  const linkData = getLinkData(locale as 'es' | 'en');
   const room = linkData.find((r) => r.slug === slug) as Room | undefined;
 
   if (!room) {
@@ -73,12 +90,12 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
     <main className="max-w-6xl mx-auto px-4 py-10">
       {/* Breadcrumbs */}
       <nav className="mb-6 text-sm text-muted-foreground">
-        <Link href="/" className="hover:underline">
-          Inicio
+        <Link href={`/${locale}`} className="hover:underline">
+          {t('home')}
         </Link>
         <span className="mx-2">/</span>
-        <Link href="/#habitaciones" className="hover:underline">
-          Habitaciones
+        <Link href={`/${locale}/#habitaciones`} className="hover:underline">
+          {t('roomsSection')}
         </Link>
         <span className="mx-2">/</span>
         <span className="text-foreground font-medium">{room!.title}</span>
@@ -112,7 +129,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
             <div className="p-6 md:p-8 space-y-6">
               <header className="space-y-2 text-center">
-                <h2 className="text-2xl font-semibold tracking-tight">Detalles de la habitación</h2>
+                <h2 className="text-2xl font-semibold tracking-tight">{t('roomDetailsTitle')}</h2>
                 {room!.description && (
                   <p className="text-muted-foreground max-w-2xl mx-auto">
                     {room!.description}
@@ -128,7 +145,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
                     <path strokeWidth="2" d="M16 14a4 4 0 10-8 0v1a4 4 0 008 0v-1z" />
                     <path strokeWidth="2" d="M12 7a3 3 0 110-6 3 3 0 010 6z" />
                   </svg>
-                  {room!.guests} huésped{room!.guests !== 1 ? "es" : ""}
+                  {room!.guests} {room!.guests !== 1 ? t('guestsPlural') : t('guests')}
                 </span>
 
                 {room!.size && (
@@ -155,7 +172,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
               {/* Amenidades (badges) */}
               {room!.amenities?.length ? (
                 <div className="space-y-2">
-                  <h3 className="text-sm font-medium text-muted-foreground">Amenidades</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground">{t('amenitiesTitle')}</h3>
                   <div className="flex flex-wrap gap-2">
                     {room!.amenities.map((a, i) => (
                       <span
@@ -172,7 +189,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
               {/* Incluye (lista con checks) */}
               {room!.included?.length ? (
                 <div className="space-y-3">
-                  <h3 className="text-sm font-medium text-muted-foreground">Incluye</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground">{t('includesTitle')}</h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {room!.included.map((item, i) => (
                       <li key={`${room!.id}-included-${i}`} className="text-sm inline-flex items-start gap-2">
@@ -193,7 +210,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
                   href="https://wa.me/521234567890?text=Hola%2C%20quiero%20informes%20de%20la%20habitación"
                   className="inline-flex items-center justify-center rounded-xl bg-[#104b67] px-5 py-2.5 text-white font-medium hover:opacity-90 transition shadow-sm"
                 >
-                  Reservar ahora
+                  {t('reserveNow')}
                 </Link>
                 {/* <a
                   href="https://wa.me/521234567890?text=Hola%2C%20quiero%20informes%20de%20la%20habitación"
@@ -216,7 +233,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
 
       {/* Otras habitaciones */}
       <section className="mt-12">
-        <h2 className="text-xl font-semibold mb-4">Otras habitaciones</h2>
+        <h2 className="text-xl font-semibold mb-4">{t('otherRooms')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {linkData
             .filter((r) => r.slug !== room!.slug)
@@ -226,7 +243,7 @@ export default async function RoomPage({ params }: { params: Promise<Params> }) 
               return (
                 <Link
                   key={r.id}
-                  href={`/habitaciones/${r.slug}`}
+                  href={`/${locale}/habitaciones/${r.slug}`}
                   className="group rounded-2xl overflow-hidden border hover:shadow-md transition"
                 >
                   <div className="relative aspect-[16/10]">

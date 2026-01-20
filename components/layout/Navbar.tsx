@@ -4,19 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
 
-const navItems = [
-  { href: "/#nosotros", label: "Nosotros", title: "nosotros" },
-  { href: "/experiencias", label: "Mazatlán", title: "experiencias" },
-  { href: "/#habitaciones", label: "Habitaciones", title: "habitaciones" },
-  { href: "/#spa", label: "Spa", title: "spa" },
-];
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations('nav');
+  const locale = useLocale();
   const MOBILE_RIGHT_IMG = "/img/titleLogo.png"; // <-- cámbialo a tu ruta
+
+  const navItems = [
+    { href: `/${locale}/#nosotros`, label: t('about'), title: "nosotros" },
+    { href: `/${locale}/experiencias`, label: t('mazatlan'), title: "experiencias" },
+    { href: `/${locale}/#habitaciones`, label: t('rooms'), title: "habitaciones" },
+    { href: `/${locale}/#spa`, label: t('spa'), title: "spa" },
+  ];
 
 
 
@@ -34,7 +38,7 @@ export default function Navbar() {
       <span
         className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#104b67] hover:bg-[#1e333c] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
       >
-        Reserva
+        {t('reserve')}
       </span>
     );
 
@@ -74,8 +78,8 @@ export default function Navbar() {
         >
           {/* Izquierda (links desktop) */}
           <div className="hidden md:flex items-center gap-6 justify-self-start">
-            <LinkItem href="/#nosotros" title="nosotros">Nosotros</LinkItem>
-            <LinkItem href="/experiencias" title="experiencias">Mazatlán</LinkItem>
+            <LinkItem href={`/${locale}/#nosotros`} title="nosotros">{t('about')}</LinkItem>
+            <LinkItem href={`/${locale}/experiencias`} title="experiencias">{t('mazatlan')}</LinkItem>
           </div>
 
           {/* Centro (logo) */}
@@ -119,9 +123,11 @@ export default function Navbar() {
 
           {/* Derecha (links desktop) + Hamburguesa mobile */}
           <div className="flex items-center justify-end gap-3 justify-self-end">
-            <div className="hidden md:flex items-center gap-6">
-              <LinkItem href="/#habitaciones" title="habitaciones">Habitaciones</LinkItem>
-              <LinkItem href="/#spa" title="spa">Spa</LinkItem>
+            <div className="hidden md:flex items-center gap-4">
+              <LinkItem href={`/${locale}/#habitaciones`} title="habitaciones">{t('rooms')}</LinkItem>
+              <LinkItem href={`/${locale}/#spa`} title="spa">{t('spa')}</LinkItem>
+              {/* Language Switcher */}
+              <LanguageSwitcher />
               {/* CTA Reserva (desktop) */}
               <ReservaButton />
             </div>
@@ -154,6 +160,11 @@ export default function Navbar() {
             {/* CTA Reserva (mobile) */}
             <div className="px-6 py-4">
               <ReservaButton className="w-full" />
+            </div>
+
+            {/* Language Switcher (mobile) */}
+            <div className="px-6 py-4 flex justify-center">
+              <LanguageSwitcher />
             </div>
 
             {navItems.map(item => (

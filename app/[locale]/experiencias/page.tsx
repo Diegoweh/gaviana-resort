@@ -2,39 +2,38 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const experiencias = [
-  {
-    id: 1,
-    title: "Centro Histórico",
-    description:
-      "A solo un paseo, descubre la vibrante Plazuela Machado, epicentro de la vida cultural con cafés, galerías y música en vivo.",
-    image: "/img/experiencias/centroHistorico.webp",
-  },
-  {
-    id: 2,
-    title: "Observatorio 1873",
-    description:
-      "Descubre la Perla del Pacífico desde el histórico Observatorio 1873, una parada cultural y visual imperdible cerca de Gaviana Resort.",
-    image: "/img/experiencias/observatorio.webp",
-  },
-  {
-    id: 3,
-    title: "Paseo Olas Altas",
-    description:
-      "El Paseo Olas Altas te espera con su encanto bohemio e histórico. Disfruta de románticos atardeceres sobre el Pacífico, justo donde rompen las olas.",
-    image: "/img/experiencias/olasAltas.webp",
-  },
-  {
-    id: 4,
-    title: "Acuario Mazatlán",
-    description:
-      "¡Prepárate para la aventura más profunda! A solo minutos del Gaviana Resort, te espera el acuario más grande de Latinoamérica. Sumérgete sin mojarte en la vida marina del Pacífico Mexicano.",
-    image: "/img/experiencias/acuario.webp",
-  },
-];
+import { useTranslations, useLocale } from "next-intl";
 
 export default function ExperienciasPage() {
+  const t = useTranslations('experiencias');
+  const locale = useLocale();
+
+  const experiencias = [
+    {
+      id: 1,
+      title: t('centroHistoricoTitle'),
+      description: t('centroHistoricoDesc'),
+      image: "/img/experiencias/centroHistorico.webp",
+    },
+    {
+      id: 2,
+      title: t('observatorioTitle'),
+      description: t('observatorioDesc'),
+      image: "/img/experiencias/observatorio.webp",
+    },
+    {
+      id: 3,
+      title: t('olasAltasTitle'),
+      description: t('olasAltasDesc'),
+      image: "/img/experiencias/olasAltas.webp",
+    },
+    {
+      id: 4,
+      title: t('acuarioTitle'),
+      description: t('acuarioDesc'),
+      image: "/img/experiencias/acuario.webp",
+    },
+  ];
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -47,12 +46,10 @@ export default function ExperienciasPage() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Experiencias en Mazatlán
+              {t('pageTitle')}
             </h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
-              Descubre lo mejor de la Perla del Pacífico con nuestras
-              recomendaciones para vivir momentos inolvidables durante tu
-              estadía.
+              {t('pageSubtitle')}
             </p>
           </motion.div>
         </div>
@@ -120,17 +117,16 @@ export default function ExperienciasPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Listo para vivir estas experiencias?
+              {t('ctaTitle')}
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Reserva tu estadía en Gaviana Resort y descubre todo lo que
-              Mazatlán tiene para ofrecerte.
+              {t('ctaDescription')}
             </p>
             <a
-              href="/"
+              href={`/${locale}`}
               className="inline-block bg-[#c68b7e] hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
             >
-              Hacer una Reservación
+              {t('ctaButton')}
             </a>
           </motion.div>
         </div>
@@ -139,10 +135,10 @@ export default function ExperienciasPage() {
       {/* Back button */}
       <div className="py-8 text-center">
         <a
-          href="/"
+          href={`/${locale}`}
           className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition-colors"
         >
-          ← Volver al inicio
+          ← {t('backToHome')}
         </a>
       </div>
     </div>

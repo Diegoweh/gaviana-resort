@@ -3,22 +3,25 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ImageCarousel from "./Carousel";
 import DistintivosImageOnly from "./DistintivosStrip";
+import { useTranslations } from "next-intl";
 
 const imagenesCarrusel = [
   '/img/backView.webp',
   '/img/pool.webp',
-  
+
 ]
 
 export default function WeSection() {
+  const t = useTranslations('weSection');
+
   return (
     <>
       {/* --- Banda full-bleed (ocupa todo el ancho) --- */}
       <div id="nosotros" className="w-full relative min-h-[45vh] flex flex-col items-center justify-center px-6 py-40">
         <Image
           src="/img/fondoHero.webp"
-          alt="Fondo hero"
-          title="Bienvenido a Gaviana Resort - Tu paraíso en la playa"
+          alt={t('backgroundAlt')}
+          title={t('backgroundTitle')}
           fill
           className="object-cover -z-10"
           sizes="(max-width: 515px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -34,11 +37,11 @@ export default function WeSection() {
         >
           <span className="block text-[#104b67]">
             <h1 className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
-              Bienvenido
+              {t('welcome')}
               <Image
                 src="/img/star.webp"
-                alt="Decorativo"
-                title="Estrella decorativa"
+                alt={t('starAlt')}
+                title={t('starTitle')}
                 width={72}
                 height={72}
                 className="align-middle"
@@ -46,7 +49,7 @@ export default function WeSection() {
               />
             </h1>
           </span>
-          <span className="block text-[#104b67]">a tu casa de playa</span>
+          <span className="block text-[#104b67]">{t('toYourBeachHouse')}</span>
         </motion.h2>
 
         <motion.p
@@ -56,7 +59,7 @@ export default function WeSection() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
           viewport={{ once: true }}
         >
-          Inspirados en la tranquilidad y la armonía de la incomparable unión  entre arena y mar, en Gaviana Resort nos tomamos muy  en serio tu descanso.
+          {t('heroDescription')}
         </motion.p>
       </div>
 
@@ -69,21 +72,21 @@ export default function WeSection() {
             {/* Right column - Description */}
             <div className="space-y-6 leading-relaxed text-center lg:text-left">
               <p className="text-[#104b67] lg:text-5xl text-3xl font-medium mb-2">
-                Queremos superar
+                {t('weWantToExceed')}
               </p>
               <p className="text-[#104b67] lg:text-5xl text-3xl font-medium  mb-6">
-                tus expectativas
+                {t('yourExpectations')}
               </p>
               <p className="text-base sm:text-lg text-justify">
-                Estamos listos para atenderte como mereces. Sea cual sea el motivo de tu visita: por trabajo, vacaciones con amigos, en familia, escapada romántica o si sólo buscas un momento para desconectarte de la vida real, Gaviana Resort lo tiene todo.
+                {t('description')}
               </p>
-  
+
               <a
                 href="#"
                 title="habitaciones"
                 className="inline-block bg-[#34536c] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-700 transition-colors"
               >
-                Habitaciones
+                {t('roomsButton')}
               </a>
             </div>
   
@@ -101,7 +104,7 @@ export default function WeSection() {
 
       <DistintivosImageOnly
         imageSrc="/img/distintivos.png"
-        imageAlt="Certificaciones del Hotel Gaviana"
+        imageAlt={t('certificationsAlt')}
         maxWidthDesktop="max-w-5xl"   // más grande en desktop
         maxWidthMobile="max-w-sm"     // tamaño cómodo en mobile
         imagePriority
@@ -116,8 +119,8 @@ export default function WeSection() {
       <div className="absolute inset-0 w-full h-full animate-heroFade">
         <Image
           src="/img/expBanner-2.webp"
-          alt="Banner playa"
-          title="Experiencias únicas en Gaviana Resort"
+          alt={t('experiencesBannerAlt')}
+          title={t('experiencesBannerTitle')}
           fill
           className="object-cover"
           priority
@@ -139,8 +142,7 @@ export default function WeSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="block text-white text-shadow-lg md:text-center text-justify">Un mar de experiencias, una promesa de bienestar, un homenaje a la calma</span>
-            {/* <span className="block text-[#f5bdb1]">de bienestar, un homenaje a la calma</span> */}
+            <span className="block text-white text-shadow-lg md:text-center text-justify">{t('experiencesTitle')}</span>
           </motion.h2>
 
           <motion.p
@@ -150,7 +152,7 @@ export default function WeSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.25 }}
             viewport={{ once: true }}
           >
-            Tenemos el compromiso de hacer de tu estancia aquí toda una experiencia única y el despertar de tus sentidos.
+            {t('experiencesDescription')}
           </motion.p>
         </div>
       </div>

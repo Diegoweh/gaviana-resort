@@ -1,8 +1,14 @@
+'use client';
+
 import { MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 
 const Footer = () => {
+  const t = useTranslations('footer');
+  const locale = useLocale();
+
   return (
     <footer className="bg-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-8 py-12">
@@ -25,8 +31,8 @@ const Footer = () => {
 
               {/* Address */}
               <div className="space-y-1 text-gray-300">
-                <p>Av. Playa Gaviotas 100, Zona Dorada, 82110</p>
-                <p>Mazatlán, Sinaloa.</p>
+                <p>{t('address1')}</p>
+                <p>{t('address2')}</p>
                 <p className="text-orange-400">reservaciones@gaviana.com</p>
               </div>
 
@@ -51,15 +57,15 @@ const Footer = () => {
                   </a>
                 </p>
                 <a
-                title='Enviar mensaje por WhatsApp'
+                title={t('whatsappTitle')}
                 href="https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white hover:text-green-500"
-                aria-label="Enviar mensaje por WhatsApp"
+                aria-label={t('whatsappTitle')}
               >
                 <MessageCircle className="h-5 w-5" />
-                <span>Mensaje de WhatsApp</span>
+                <span>{t('whatsappLabel')}</span>
               </a>
 
               </div>
@@ -67,16 +73,16 @@ const Footer = () => {
 
             {/* Right Side - Legal Links */}
             <div className="space-y-6">
-              <h4 className="text-lg font-semibold">Legales</h4>
+              <h4 className="text-lg font-semibold">{t('legalsTitle')}</h4>
               <div className="space-y-3">
-                <a href="/aviso-privacidad" title='aviso' className="block text-gray-300 hover:text-white transition-colors">
-                  Aviso de privacidad
+                <a href={`/${locale}/aviso-privacidad`} title='aviso' className="block text-gray-300 hover:text-white transition-colors">
+                  {t('privacyPolicy')}
                 </a>
-                <a href="/terminos-y-condiciones" title='terminos' className="block text-gray-300 hover:text-white transition-colors">
-                  Términos y condiciones
+                <a href={`/${locale}/terminos-y-condiciones`} title='terminos' className="block text-gray-300 hover:text-white transition-colors">
+                  {t('termsConditions')}
                 </a>
                 <a href="https://gaviana.merkatek.com/" title='facturacion' className="block text-gray-300 hover:text-white transition-colors">
-                  Facturación
+                  {t('billing')}
                 </a>
               </div>
             </div>
@@ -84,7 +90,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="border-t border-slate-600 mt-12 pt-8 text-center text-gray-400">
-            <p>2025 Gaviana Resort. Todos los derechos reservados.</p>
+            <p>{t('copyright')}</p>
           </div>
         </div>
       </footer>

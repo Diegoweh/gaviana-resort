@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import FloatingReserva from "@/components/ui/FloatingLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap", // Prevent FOIT (Flash of Invisible Text)
+  display: "swap",
   preload: true,
 });
 
@@ -38,14 +35,13 @@ export const metadata: Metadata = {
   ],
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <head>
         <link
           rel="preload"
@@ -58,10 +54,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <FloatingReserva />
         {children}
-        <Footer />
       </body>
     </html>
   );

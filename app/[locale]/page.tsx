@@ -5,26 +5,31 @@ import ImageCarousel from "@/components/layout/Carousel";
 import ImageBanner from "@/components/layout/ImageBanner";
 import WeSection from "@/components/layout/WeSection";
 import { motion } from "framer-motion";
-import { linkData } from "@/lib/link-data"
+import { getLinkData } from "@/lib/link-data"
 
 import Image from "next/image";
 import PromoSplitBanner from "@/components/layout/PromoSplitBanner";
 
 import { MessageCircle } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 
 const imagenesCarrusel = [
   '/img/spa1.webp',
   '/img/spa2.webp',
-  
+
 ]
 
 const imagenesCarrusel2 = [
   '/img/bar1.webp',
   '/img/bar2.webp',
-  
+
 ]
 
 export default function Home() {
+  const t = useTranslations('home');
+  const tAria = useTranslations('aria');
+  const tCommon = useTranslations('common');
+  const locale = useLocale();
   return (
     
     <>
@@ -41,35 +46,34 @@ export default function Home() {
         {
           imageSrc: "/img/sessonBanner.webp",
           mobileImageSrc: "/img/sessonBannerMobile.webp",
-          title: "Preventa Semana Santa 2026",
-          kicker: "Hasta un 45% de descuento",
+          title: t('promoSeasonTitle'),
+          kicker: t('promoSeasonKicker'),
           lines: [
-            "Del 29 de marzo al 5 de abril, te espera Hotel Gaviana.",
-            "Reserva ya y vive la pasión del puerto con vista al mar.",
-            "¡Tu descanso perfecto está en Mazatlán!",
+            t('promoSeasonLine1'),
+            t('promoSeasonLine2'),
+            t('promoSeasonLine3'),
           ],
-          ctaLabel: "Reservar",
+          ctaLabel: t('promoSeasonCta'),
           ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
             "Hola, quiero reservar para Semana Santa 2026 en Hotel Gaviana."
           )}`,
         },
-        // Puedes agregar más slides aquí
        {
           imageSrc: "/img/sessonBanner-2.webp",
           mobileImageSrc: "/img/sessonBannerMobile-2.webp",
-          title: "Promoción Enero 2026",
-          kicker: "Hasta un 45% de descuento",
+          title: t('promoJanuaryTitle'),
+          kicker: t('promoJanuaryKicker'),
           lines: [
-            "Este enero 2026, disfruta Mazatlán desde Hotel Gaviana.",
-            "Aprovecha hasta 45% de descuento reservando con anticipación.",
-            "¡Escápate al mar y empieza el año como se debe!",
+            t('promoJanuaryLine1'),
+            t('promoJanuaryLine2'),
+            t('promoJanuaryLine3'),
           ],
-          ctaLabel: "Reservar",
+          ctaLabel: t('promoJanuaryCta'),
           ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
             "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
           )}`,
         },
-        
+
       ]}
       height="h-[420px]"
       showTexture
@@ -91,11 +95,11 @@ export default function Home() {
       >
         <span className="block text-[#104b67]">
           <span className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
-            Habitaciones
+            {t('roomsTitle')}
             <Image
               src="/img/concha.jpg"
-              alt="Decorativo"
-              title="Icono decorativo de concha"
+              alt={tCommon('decorativeIcon')}
+              title={tCommon('decorativeIconTitle')}
               width={72}
               height={72}
               className="align-middle"
@@ -103,7 +107,6 @@ export default function Home() {
             />
           </span>
         </span>
-        {/* <span className="block text-[#104b67]">a tu casa de playa</span> */}
       </motion.h2>
 
       <motion.p
@@ -113,11 +116,11 @@ export default function Home() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
         viewport={{ once: true }}
       >
-        Elige entre nuestras diferentes categorías de habitaciones o suites de acuerdo a tu gusto o necesidad para hacer de tu estadía una experiencia única.
+        {t('roomsDescription')}
       </motion.p>
     </div>
     
-    <CarouselRooms slides={linkData} options={{ loop: true }} />     
+    <CarouselRooms slides={getLinkData(locale as 'es' | 'en')} options={{ loop: true }} />     
 
     {/* <Rooms /> */}
 
@@ -138,13 +141,13 @@ export default function Home() {
           {/* Right column - Description */}
           <div className="space-y-6 leading-relaxed">
             <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
-              El descanso que mereces
+              {t('spaSubtitle')}
             </p>
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
-              SPA Pyramides
+              {t('spaTitle')}
             </p>
             <p className="text-base sm:text-lg md:text-start text-justify">
-              Date el gusto de salir del estrés que se vive en la ciudad. Visita el Spa Pyramides y deja tu descanso en manos de quienes saben. Ofrecemos para ti una gran variedad de opciones para tu relajación.
+              {t('spaDescription')}
             </p>
 
             <a
@@ -152,7 +155,7 @@ export default function Home() {
               title="home"
               className="inline-block bg-[#104b67] text-white px-6 py-2 rounded-xl font-medium hover:bg-stone-600 transition-colors"
             >
-              Ver más
+              {t('seeMore')}
             </a>
           </div>
         </div>
@@ -165,16 +168,16 @@ export default function Home() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
-          {/* Right column - Description */}          
+          {/* Right column - Description */}
           <div className="space-y-6 leading-relaxed">
             <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
-              El sabor de Mazatlán
+              {t('experiencesSubtitle')}
             </p>
             <p className="text-[#104b67] lg:text-5xl text-lg font-medium mb-6">
-              Experiencias y Gastronomía
-            </p>           
+              {t('experiencesTitle')}
+            </p>
             <p className="text-base sm:text-lg md:text-start text-justify">
-              Haremos de tu estancia en Mazatlán una visita inolvidable y placentera. En Gaviana podrás disfrutar de bares exclusivos y restaurantes temáticos, cada uno listo para recibirte y maravillarte con su concepto.
+              {t('experiencesDescription')}
             </p>
 
             {/* <a
@@ -205,25 +208,25 @@ export default function Home() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#104b67] mb-2">
-                Contáctanos
+                {t('contactTitle')}
               </h2>
               <p className="text-gray-600">
-                Estamos aquí para ayudarte con tu reservación
+                {t('contactSubtitle')}
               </p>
             </div>
 
             {/* Dirección */}
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-[#104b67]">Dirección</h3>
+              <h3 className="text-lg font-semibold text-[#104b67]">{t('addressTitle')}</h3>
               <div className="text-gray-700">
-                <p>Av. Playa Gaviotas 100, Zona Dorada, 82110</p>
-                <p>Mazatlán, Sinaloa, México</p>
+                <p>{t('addressLine1')}</p>
+                <p>{t('addressLine2')}</p>
               </div>
             </div>
 
             {/* Email */}
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-[#104b67]">Email</h3>
+              <h3 className="text-lg font-semibold text-[#104b67]">{t('emailTitle')}</h3>
               <a
                 href="mailto:reservaciones@gaviana.com"
                 className="text-orange-500 hover:text-orange-600 transition-colors"
@@ -234,7 +237,7 @@ export default function Home() {
 
             {/* Teléfonos */}
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-[#104b67]">Teléfonos</h3>
+              <h3 className="text-lg font-semibold text-[#104b67]">{t('phonesTitle')}</h3>
               <div className="space-y-1 text-gray-700">
                 <p>
                   <span className="text-orange-500 font-medium">MX</span>{' '}
@@ -255,15 +258,15 @@ export default function Home() {
                   </a>
                 </p>
                 <a
-                  title='Enviar mensaje por WhatsApp'
+                  title={tAria('sendWhatsApp')}
                   href="https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#104b67] hover:text-green-500"
-                  aria-label="Enviar mensaje por WhatsApp"
+                  aria-label={tAria('sendWhatsApp')}
                 >
                   <MessageCircle className="h-5 w-5" />
-                  <span>Mensaje de WhatsApp</span>
+                  <span>{t('whatsappMessage')}</span>
                 </a>
               </div>
             </div>
@@ -279,7 +282,7 @@ export default function Home() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación de Gaviana Resort en Mazatlán"
+              title={t('locationTitle')}
             />
           </div>
         </div>

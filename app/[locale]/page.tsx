@@ -15,7 +15,8 @@ import { useTranslations, useLocale } from "next-intl";
 
 const imagenesCarrusel = [
   '/img/spa1.webp',
-  '/img/spa2.webp',
+  
+  '/img/spa3.webp',
 
 ]
 

@@ -60,7 +60,7 @@ export default function Home() {
           )}`,
         },
        {
-          imageSrc: "/img/carnaval-2.webp",
+          imageSrc: "/img/sessonBanner-2.webp",
           mobileImageSrc: "/img/sessonBannerMobile-2.webp",
           title: t('promoJanuaryTitle'),
           kicker: t('promoJanuaryKicker'),
@@ -76,7 +76,7 @@ export default function Home() {
         },
         {
           imageSrc: "/img/carnaval.webp",
-          mobileImageSrc: "/img/sessonBannerMobile-2.webp",
+          mobileImageSrc: "/img/carnaval-2.webp",
           title: t('promoJanuaryTitle'),
           kicker: t('promoJanuaryKicker'),
           lines: [

@@ -77,14 +77,14 @@ export default function Home() {
         {
           imageSrc: "/img/carnaval-2.webp",
           mobileImageSrc: "/img/carnaval.webp",
-          title: t('promoJanuaryTitle'),
-          kicker: t('promoJanuaryKicker'),
+          title: t('promoCarnavalTitle'),
+          kicker: t('promoCarnavalKicker'),
           lines: [
-            t('promoJanuaryLine1'),
-            t('promoJanuaryLine2'),
-            t('promoJanuaryLine3'),
+            t('promoCarnavalLine1'),
+            t('promoCarnavalLine2'),
+            t('promoCarnavalLine3'),
           ],
-          ctaLabel: t('promoJanuaryCta'),
+          ctaLabel: t('promoCarnavalCta'),
           ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
             "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
           )}`,

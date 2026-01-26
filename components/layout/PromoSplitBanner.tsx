@@ -78,7 +78,7 @@ export default function PromoSplitBanner({
               </div>
 
               {/* Overlay gradient para mejor legibilidad */}
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
               {/* Contenido superpuesto - Mobile: abajo, Desktop: derecha */}
               <div className="absolute inset-0 flex items-end md:items-center md:justify-end px-4 md:px-12 py-6 md:py-10">

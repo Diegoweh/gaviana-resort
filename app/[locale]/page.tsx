@@ -75,8 +75,8 @@ export default function Home() {
           )}`,
         },
         {
-          imageSrc: "/img/carnaval.webp",
-          mobileImageSrc: "/img/carnaval-2.webp",
+          imageSrc: "/img/carnaval-2.webp",
+          mobileImageSrc: "/img/carnaval.webp",
           title: t('promoJanuaryTitle'),
           kicker: t('promoJanuaryKicker'),
           lines: [

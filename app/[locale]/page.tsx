@@ -60,7 +60,22 @@ export default function Home() {
           )}`,
         },
        {
-          imageSrc: "/img/sessonBanner-2.webp",
+          imageSrc: "/img/carnaval-2.webp",
+          mobileImageSrc: "/img/sessonBannerMobile-2.webp",
+          title: t('promoJanuaryTitle'),
+          kicker: t('promoJanuaryKicker'),
+          lines: [
+            t('promoJanuaryLine1'),
+            t('promoJanuaryLine2'),
+            t('promoJanuaryLine3'),
+          ],
+          ctaLabel: t('promoJanuaryCta'),
+          ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
+            "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
+          )}`,
+        },
+        {
+          imageSrc: "/img/carnaval.webp",
           mobileImageSrc: "/img/sessonBannerMobile-2.webp",
           title: t('promoJanuaryTitle'),
           kicker: t('promoJanuaryKicker'),

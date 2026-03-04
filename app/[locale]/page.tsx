@@ -1,8 +1,9 @@
 "use client";
 import CarouselRooms from "@/components/CarouselRooms";
-import ImageCarousel from "@/components/layout/Carousel";
-
-import ImageBanner from "@/components/layout/ImageBanner";
+//import ImageCarousel from "@/components/layout/Carousel";
+import Carousel from "@/components/layout/Carousel";
+ 
+import ImagesBanner from "@/components/layout/ImageBanner";
 import WeSection from "@/components/layout/WeSection";
 import { motion } from "framer-motion";
 import { getLinkData } from "@/lib/link-data"
@@ -34,7 +35,7 @@ export default function Home() {
   return (
     
     <>
-    <ImageBanner
+    <ImagesBanner
       titleImageSrc="/img/titleLogoWhite.png"      
       imageSrc="/img/hero2.webp"
       mobileImageSrc="/img/heroMovil.webp"
@@ -149,7 +150,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="lg:w-full relative h-96 w-full rounded-lg overflow-hidden shadow-xl">
             <div className="absolute inset-0 flex items-center justify-center">
-              <ImageCarousel images={imagenesCarrusel}/>
+              <Carousel images={imagenesCarrusel}/>
             </div>
           </div>
           </div>
@@ -208,7 +209,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="lg:w-full relative h-96 w-full rounded-lg overflow-hidden shadow-xl">
             <div className="absolute inset-0 flex items-center justify-center">
-              <ImageCarousel images={imagenesCarrusel2}/>
+              <Carousel images={imagenesCarrusel2}/>
             </div>
           </div>
           </div>
@@ -304,6 +305,7 @@ export default function Home() {
         </div>
       </div>
     </section>   
+    <div id="mostrar-caja-reservas" style={{ display: 'none' }}></div>
    
     </>
 

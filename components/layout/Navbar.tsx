@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
-
+//const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
+const BOOKING_URL = "https://booking.gaviana.com/listahab?normal=1";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const t = useTranslations('nav');
@@ -36,7 +36,7 @@ export default function Navbar() {
     const isExternal = BOOKING_URL.startsWith("http");
     const Btn = (
       <span
-        className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#104b67] hover:bg-[#1e333c] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
+        className={`menu-item-3397 activar-menu-mobil inline-flex items-center justify-center rounded-full px-4 py-2 text-sm md:text-[15px] font-medium text-white bg-[#104b67] hover:bg-[#1e333c] active:bg-[#a26c62] shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c68b7e] ${className}`}
       >
         {t('reserve')}
       </span>
@@ -159,7 +159,7 @@ export default function Navbar() {
           <div className="flex flex-col items-stretch divide-y divide-white/50">
             {/* CTA Reserva (mobile) */}
             <div className="px-6 py-4">
-              <ReservaButton className="w-full" />
+              <ReservaButton className="w-full r2k-reservar menu-item-3397 activar-menu-mobil" />
             </div>
 
             {/* Language Switcher (mobile) */}

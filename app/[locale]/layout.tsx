@@ -5,6 +5,8 @@ import { locales } from '@/i18n';
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingReserva from "@/components/ui/FloatingLink";
+import HomeCajaFlotante from "@/components/ui/HomeCajaFlotante";
+import HideReservaBoxOnInternalPages from "@/components/ui/HideReservaBoxOnInternalPages";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -31,6 +33,8 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <Navbar />
       <FloatingReserva />
+      <HomeCajaFlotante />
+      <HideReservaBoxOnInternalPages />
       {children}
       <Footer />
     </NextIntlClientProvider>

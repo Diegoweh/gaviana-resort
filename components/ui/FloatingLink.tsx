@@ -3,7 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 
-const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
+//const BOOKING_URL = "https://wa.me/5216691527305?text=Hola%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"; // <-- cámbialo
+const BOOKING_URL = "#";
 
 export default function FloatingReserva() {
   return (
@@ -19,6 +20,7 @@ export default function FloatingReserva() {
         rel="noopener noreferrer"
         aria-label="Abrir módulo de reservas"
         className="
+          menu-item-3397 activar-menu-mobil
           flex items-center justify-center
           w-14 h-14 md:w-16 md:h-16
           rounded-full
@@ -32,6 +34,6 @@ export default function FloatingReserva() {
       >
         <Calendar size={26} strokeWidth={2.2} />
       </Link>
-    </motion.div> 
+    </motion.div>
   );
 }

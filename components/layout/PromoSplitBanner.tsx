@@ -141,14 +141,14 @@ export default function PromoSplitBanner({
                             href={slide.ctaHref}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-2.5 text-slate-900 font-medium hover:bg-white/90 active:bg-white/80 shadow-lg transition"
+                            className="menu-item-3397 activar-menu-mobil inline-flex items-center justify-center rounded-lg bg-white px-6 py-2.5 text-slate-900 font-medium hover:bg-white/90 active:bg-white/80 shadow-lg transition"
                           >
                             {slide.ctaLabel}
                           </a>
                         ) : (
                           <Link
                             href={slide.ctaHref}
-                            className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-2.5 text-slate-900 font-medium hover:bg-white/90 active:bg-white/80 shadow-lg transition"
+                            className="menu-item-3397 activar-menu-mobil inline-flex items-center justify-center rounded-lg bg-white px-6 py-2.5 text-slate-900 font-medium hover:bg-white/90 active:bg-white/80 shadow-lg transition"
                           >
                             {slide.ctaLabel}
                           </Link>

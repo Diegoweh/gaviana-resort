@@ -207,8 +207,8 @@ export default async function RoomPage({ params }: { params: Promise<Params & { 
               {/* CTA */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
-                  href="https://wa.me/521234567890?text=Hola%2C%20quiero%20informes%20de%20la%20habitación"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#104b67] px-5 py-2.5 text-white font-medium hover:opacity-90 transition shadow-sm"
+                  href="#"
+                  className="menu-item-3397 activar-menu-mobil inline-flex items-center justify-center rounded-xl bg-[#104b67] px-5 py-2.5 text-white font-medium hover:opacity-90 transition shadow-sm"
                 >
                   {t('reserveNow')}
                 </Link>

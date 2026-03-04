@@ -11,6 +11,7 @@ interface CarouselProps {
 }
 
 export default function ImageCarousel({ images, autoPlayInterval = 4000, className = "" }: CarouselProps) {
+//export function ImageCarousel({ images, autoPlayInterval = 4000, className = "" }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 

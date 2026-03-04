@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import BookingBar from '../ui/BookingBar';
+//import BookingBar from '../ui/BookingBar';
 
 interface ImageBannerProps {
   imageSrc: string;
@@ -14,7 +14,7 @@ interface ImageBannerProps {
   titleImageSrc?: string; // 👈 en lugar de title, ahora se usa una imagen
 }
 
-const ImageBanner: React.FC<ImageBannerProps> = ({
+const ImagesBanner: React.FC<ImageBannerProps> = ({
   imageSrc,
   mobileImageSrc,
   children,
@@ -103,10 +103,12 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 w-[95%] md:w-[80%] max-w-5xl"
       >
-        <BookingBar />
+        {/*<BookingBar />*/}
+        <div className="r2k-reservar">
+        </div>
       </motion.div>
     </section>
   );
 };
 
-export default ImageBanner;
+export default ImagesBanner;

@@ -124,7 +124,7 @@ export default function ExperienciasPage() {
             </p>
             <a
               href={`/${locale}`}
-              className="inline-block bg-[#c68b7e] hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+              className="menu-item-3397 activar-menu-mobil inline-block bg-[#c68b7e] hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
             >
               {t('ctaButton')}
             </a>

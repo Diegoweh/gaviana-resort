@@ -38,8 +38,8 @@ export default function HomeCajaFlotante() {
         e.preventDefault();
         e.stopImmediatePropagation(); // IMPORTANTE: Prevenir que otros handlers se ejecuten
         const button = target.closest('.activar-menu-mobil, .menu-item-3397') as HTMLElement;
-        const contenedorCarrito = document.querySelector('#contenedor-carrito-lateral');
-        const carritoLateral = document.querySelector('#carrito-lateral');
+        const contenedorCarrito = document.querySelector<HTMLElement>('#contenedor-carrito-lateral');
+        const carritoLateral = document.querySelector<HTMLElement>('#carrito-lateral');
 
         if (!contenedorCarrito || !carritoLateral) {
           console.log("No se encontró el carrito lateral, aún no se ha inicializado");
@@ -72,8 +72,8 @@ export default function HomeCajaFlotante() {
         document.querySelectorAll('.activar-menu-mobil, .menu-item-3397').forEach(function (clase) {
           (clase as HTMLElement).classList.remove('is-active');
         });
-        const contenedorCarrito = document.querySelector('#contenedor-carrito-lateral');
-        const carritoLateral = document.querySelector('#carrito-lateral');
+        const contenedorCarrito = document.querySelector<HTMLElement>('#contenedor-carrito-lateral');
+        const carritoLateral = document.querySelector<HTMLElement>('#carrito-lateral');
         if (contenedorCarrito) contenedorCarrito.style.display = 'none';
         if (carritoLateral) carritoLateral.style.display = 'none';
         return;
@@ -84,8 +84,8 @@ export default function HomeCajaFlotante() {
         document.querySelectorAll('.activar-menu-mobil, .menu-item-3397').forEach(function (clase) {
           (clase as HTMLElement).classList.remove('is-active');
         });
-        const contenedorCarrito = document.querySelector('#contenedor-carrito-lateral');
-        const carritoLateral = document.querySelector('#carrito-lateral');
+        const contenedorCarrito = document.querySelector<HTMLElement>('#contenedor-carrito-lateral');
+        const carritoLateral = document.querySelector<HTMLElement>('#carrito-lateral');
         if (contenedorCarrito) contenedorCarrito.style.display = 'none';
         if (carritoLateral) carritoLateral.style.display = 'none';
       }

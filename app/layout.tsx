@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -151,6 +151,7 @@ export default function RootLayout({
         </noscript>
         {children}
         <GoogleAnalytics gaId="G-2YW2WELGGR" />
+        <GoogleTagManager gtmId="GTM-W9S548T" />
       </body>
     </html>
   );

@@ -46,8 +46,8 @@ export default function Home() {
     <PromoSplitBanner
       slides={[
         {
-          imageSrc: "/img/sessonBanner.webp",
-          mobileImageSrc: "/img/sessonBannerMobile.webp",
+          imageSrc: "/img/sessonBanner-2.webp",
+          mobileImageSrc: "/img/sessonBannerMobile-2.webp",
           title: t('promoSeasonTitle'),
           kicker: t('promoSeasonKicker'),
           lines: [
@@ -60,36 +60,36 @@ export default function Home() {
             "Hola, quiero reservar para Semana Santa 2026 en Hotel Gaviana."
           )}`,
         },
-       {
-          imageSrc: "/img/sessonBanner-2.webp",
-          mobileImageSrc: "/img/sessonBannerMobile-2.webp",
-          title: t('promoJanuaryTitle'),
-          kicker: t('promoJanuaryKicker'),
-          lines: [
-            t('promoJanuaryLine1'),
-            t('promoJanuaryLine2'),
-            t('promoJanuaryLine3'),
-          ],
-          ctaLabel: t('promoJanuaryCta'),
-          ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
-            "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
-          )}`,
-        },
-        {
-          imageSrc: "/img/carnaval-2.webp",
-          mobileImageSrc: "/img/carnaval.webp",
-          title: t('promoCarnavalTitle'),
-          kicker: t('promoCarnavalKicker'),
-          lines: [
-            t('promoCarnavalLine1'),
-            t('promoCarnavalLine2'),
-            t('promoCarnavalLine3'),
-          ],
-          ctaLabel: t('promoCarnavalCta'),
-          ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
-            "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
-          )}`,
-        },
+      //  {
+      //     imageSrc: "/img/sessonBanner-2.webp",
+      //     mobileImageSrc: "/img/sessonBannerMobile-2.webp",
+      //     title: t('promoJanuaryTitle'),
+      //     kicker: t('promoJanuaryKicker'),
+      //     lines: [
+      //       t('promoJanuaryLine1'),
+      //       t('promoJanuaryLine2'),
+      //       t('promoJanuaryLine3'),
+      //     ],
+      //     ctaLabel: t('promoJanuaryCta'),
+      //     ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
+      //       "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
+      //     )}`,
+      //   },
+      //   {
+      //     imageSrc: "/img/carnaval-2.webp",
+      //     mobileImageSrc: "/img/carnaval.webp",
+      //     title: t('promoCarnavalTitle'),
+      //     kicker: t('promoCarnavalKicker'),
+      //     lines: [
+      //       t('promoCarnavalLine1'),
+      //       t('promoCarnavalLine2'),
+      //       t('promoCarnavalLine3'),
+      //     ],
+      //     ctaLabel: t('promoCarnavalCta'),
+      //     ctaHref: `https://wa.me/5216691234567?text=${encodeURIComponent(
+      //       "Hola, quiero aprovechar la Promoción Enero 2026 en Hotel Gaviana. ¿Me comparten disponibilidad y tarifas?"
+      //     )}`,
+      //   },
 
       ]}
       height="h-[420px]"

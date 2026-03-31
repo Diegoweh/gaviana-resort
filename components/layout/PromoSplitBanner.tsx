@@ -122,7 +122,7 @@ export default function PromoSplitBanner({
 
                     {slide.kicker && (
                       <p className="text-base md:text-xl font-semibold mb-2 md:mb-3 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
-                        {slide.kicker}
+                        {/* {slide.kicker} */}
                       </p>
                     )}
 

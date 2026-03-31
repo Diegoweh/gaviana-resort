@@ -35,6 +35,7 @@ export default function Home() {
   return (
     
     <>
+    <h1 className="sr-only">Gaviana Resort – Tu casa de playa en Mazatlán</h1>
     <ImagesBanner
       titleImageSrc="/img/titleLogoWhite.png"      
       imageSrc="/img/hero2.webp"

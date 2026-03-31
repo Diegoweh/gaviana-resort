@@ -28,7 +28,7 @@ export default function WeSection() {
           quality={75}
 
         />
-        <motion.h1
+        <motion.h2
           className="text-4xl font-bold leading-tight text-center"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -50,7 +50,7 @@ export default function WeSection() {
             </span>
           </span>
           <span className="block text-[#104b67]">{t('toYourBeachHouse')}</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-justify md:text-center"

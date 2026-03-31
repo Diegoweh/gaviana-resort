@@ -160,9 +160,9 @@ export default function Home() {
             <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
               {t('spaSubtitle')}
             </p>
-            <p className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
+            <h2 className="text-[#104b67] lg:text-5xl text-lg font-medium  mb-6">
               {t('spaTitle')}
-            </p>
+            </h2>
             <p className="text-base sm:text-lg md:text-start text-justify">
               {t('spaDescription')}
             </p>
@@ -190,9 +190,9 @@ export default function Home() {
             <p className="text-stone-500 lg:text-2xl text-lg font-medium uppercase mb-6">
               {t('experiencesSubtitle')}
             </p>
-            <p className="text-[#104b67] lg:text-5xl text-lg font-medium mb-6">
+            <h2 className="text-[#104b67] lg:text-5xl text-lg font-medium mb-6">
               {t('experiencesTitle')}
-            </p>
+            </h2>
             <p className="text-base sm:text-lg md:text-start text-justify">
               {t('experiencesDescription')}
             </p>

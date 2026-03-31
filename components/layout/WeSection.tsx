@@ -28,7 +28,7 @@ export default function WeSection() {
           quality={75}
 
         />
-        <motion.h2
+        <motion.h1
           className="text-4xl font-bold leading-tight text-center"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -36,7 +36,7 @@ export default function WeSection() {
           viewport={{ once: true }}
         >
           <span className="block text-[#104b67]">
-            <h1 className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
+            <span className="inline-flex items-center gap-2 text-[#104b67] font-mixta text-5xl">
               {t('welcome')}
               <Image
                 src="/img/star.webp"
@@ -47,10 +47,10 @@ export default function WeSection() {
                 className="align-middle"
                 style={{ width: 'auto', height: 'auto' }}
               />
-            </h1>
+            </span>
           </span>
           <span className="block text-[#104b67]">{t('toYourBeachHouse')}</span>
-        </motion.h2>
+        </motion.h1>
 
         <motion.p
           className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text-justify md:text-center"
